@@ -144,8 +144,27 @@
             top: 6680px;
         }
 
+        .line-14 {
+            top: 385px
+        }
+
+        .line-15 {
+            top: 417px
+        }
+
         .abs {
             position: absolute;
+        }
+
+        .graph-paper {
+            width: 1725vw;
+            height: 5000vh;
+            background-color: #ffffff;
+            background-image:
+                linear-gradient(to right, #e5e5e5 1px, transparent 1px),
+                linear-gradient(to bottom, #e5e5e5 1px, transparent 1px);
+            background-size: 20px 20px;
+            /* Adjust size of the grid squares */
         }
     </style>
 </head>
@@ -167,8 +186,11 @@
         <hr class="divider line-11">
         <hr class="divider line-12">
         <hr class="divider line-13">
-    </div>
+        <hr class="divider line-14">
+        <hr class="divider line-15">
 
+    </div>
+    <div class="graph-paper"></div>
 
     <div id="shared_elements">
 
@@ -238,27 +260,27 @@
                                 style="position: absolute; left: 40px; top: 372px; font-size: 55px;">weather:
                             </div>
                             <div class="lbl-regular"
-                                style="position: absolute; left: 494px; top: 378px; font-size: 50px;">
+                                style="position: absolute; left: 499px; top: 372px; font-size: 55px;">
                                 high/low</div>
                             <div class="lbl-regular"
                                 style="position: absolute; left: 810px; top: 378px; font-size: 49px;">/
                             </div>
                             <div class="lbl-regular"
-                                style="position: absolute; left: 977px; top: 376px; font-size: 49px;">
+                                style="position: absolute; left: 977px; top: 372px; font-size: 55px;">
                                 humidity/bp</div>
                             <div class="lbl-regular"
-                                style="position: absolute; left: 1362px; top: 380px; font-size: 50px;">/
+                                style="position: absolute; left: 1400px; top: 375px; font-size: 55px;">/
                             </div>
 
 
                             <input type="text" class="lbl-regular" id="weather_high" maxlength="3" placeholder="HIGH"
-                                style="position: absolute; left: 674px; top: 385px; width: 75px; height: 33px; text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 35px;">
+                                style="position: absolute; left: 720px; top: 388px; width: 75px; height: 35px; text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
                             <input type="text" class="lbl-regular" id="weather_low" maxlength="3" placeholder="LOW"
-                                style="position: absolute; left: 838px; top: 385px; width: 75px; height: 33px; text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 35px;">
+                                style="position: absolute; left: 859px; top: 388px; width: 75px; height: 35px; text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
                             <input type="text" class="lbl-regular" id="weather_humidity" maxlength="3" placeholder="RH"
-                                style="position: absolute; left: 1234px; top: 385px; width: 75px; height: 33px; text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 35px;">
+                                style="position: absolute; left: 1280px; top: 388px; width: 75px; height: 35px; text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
                             <input type="text" class="lbl-regular" id="weather_bp" maxlength="6" placeholder="BP"
-                                style="position: absolute; left: 1389px; top: 385px; width: 85px; height: 33px; text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 35px;">
+                                style="position: absolute; left: 1460px; top: 388px; width: 75px; height: 35px; text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
 
                             <select id="dd_weather" class="lbl-condensed-black"
                                 style="position: absolute; left: 260px; top: 385px; width: 200px; height: 50px; font-size: 32px;">
