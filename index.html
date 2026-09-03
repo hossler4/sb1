@@ -186,9 +186,8 @@
 <div class="lbl-condensed-black" style="position: absolute; left: 1345px; top: 87px; font-size: 47px;">
     /</div>
 
-<input type="text" id="date_mm" maxlength="2" placeholder="MM" style="position: absolute; left: 1109px; top: 89px; width: 60px; height: 30px; text-align: center;
-           border: 2px solid #333; border-radius: 4px; font-size: 37px;">
-
+<input type="text" class="lbl-condensed-black" id="date_mm" maxlength="2" placeholder="MM"
+    style="position: absolute; left: 1289px; top: 89px; width: 60px; height: 30px; text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
 <input type="text" class="lbl-condensed-black" id="date_dd" maxlength="2" placeholder="DD"
     style="position: absolute; left: 1509px; top: 89px; width: 60px; height: 30px; text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
 <input type="text" class="lbl-condensed-black" id="date_yyyy" maxlength="4" placeholder="YYYY"
@@ -2187,8 +2186,8 @@
 
                                     function setTodayAsDate() {
                                         const today = new Date();
-                                        const dd = String(today.getMonth() + 1).padStart(2, '0');
-                                        const mm = String(today.getDate()).padStart(2, '0');
+                                        const mm = String(today.getMonth() + 1).padStart(2, '0');
+                                        const dd = String(today.getDate()).padStart(2, '0');
                                         const yyyy = today.getFullYear();
 
                                         document.getElementById('date_mm').value = mm;
