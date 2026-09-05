@@ -576,9 +576,9 @@
                                     onclick="toggleCheckbox(this)"
                                     style="background-image: url('images/chk_nervousSystem_other_default.png'); left: 1280px; top: 1137px;">
                                 </button>
-                                <input type="text" class="lbl-regular" id="nervousSystem_other" maxlength="4"
-                                    placeholder="other"
-                                    style="position: absolute; left: 1280px; top: 1203px; width: 270px; height: 80px; text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 35px;">
+                                <input type="text" class="lbl-regular" id="nervousSystem_other" maxlength="100"
+                                    placeholder="other" style="position: absolute; left: 1280px; top: 1203px; width: 270px; height: 80px; text-align: center; border: 2px solid #333; 
+                                    border-radius: 4px; font-size: 35px; display: none;">
                             </div>
 
 
@@ -1006,17 +1006,7 @@
                                     onclick="toggleCheckbox(this)"
                                     style="background-image: url('images/chk_painType_pinsNeedles_default.png'); left: 799px; top: 2193px;">
                                 </button>
-                                <button id="chk_painType_growingPains" class="checkbox"
-                                    data-default="images/chk_painType_growingPains_default.png"
-                                    data-pressed="images/chk_painType_growingPains_pressed.png"
-                                    onclick="toggleCheckbox(this)"
-                                    style="background-image: url('images/chk_painType_growingPains_default.png'); left: 799px; top: 2296px;">
-                                </button>
-                                <button id="chk_painType_other" class="checkbox"
-                                    data-default="images/chk_painType_other_default.png"
-                                    data-pressed="images/chk_painType_other_pressed.png" onclick="toggleCheckbox(this)"
-                                    style="background-image: url('images/chk_painType_other_default.png'); left: 799px; top: 2399px;">
-                                </button>
+
                                 <button id="chk_painType_allodynia" class="checkbox"
                                     data-default="images/chk_painType_allodynia_default.png"
                                     data-pressed="images/chk_painType_allodynia_pressed.png"
@@ -1029,13 +1019,29 @@
                                     onclick="toggleCheckbox(this)"
                                     style="background-image: url('images/chk_painType_crushing_default.png'); left: 1280px; top: 2193px;">
                                 </button>
+                                <button id="chk_painType_growingPains" class="checkbox"
+                                    data-default="images/chk_painType_growingPains_default.png"
+                                    data-pressed="images/chk_painType_growingPains_pressed.png"
+                                    onclick="toggleCheckbox(this)"
+                                    style="background-image: url('images/chk_painType_growingPains_default.png'); left: 799px; top: 2296px;">
+                                </button>
                                 <button id="chk_painType_breaking" class="checkbox"
                                     data-default="images/chk_painType_breaking_default.png"
                                     data-pressed="images/chk_painType_breaking_pressed.png"
                                     onclick="toggleCheckbox(this)"
                                     style="background-image: url('images/chk_painType_breaking_default.png'); left: 1280px; top: 2296px;">
-
                                 </button>
+                                <button id="chk_painType_other" class="checkbox"
+                                    data-default="images/chk_painType_other_default.png"
+                                    data-pressed="images/chk_painType_other_pressed.png" onclick="toggleCheckbox(this)"
+                                    style="background-image: url('images/chk_painType_other_default.png'); left: 799px; top: 2399px;">
+                                </button>
+                                <input type="text" class="lbl-regular" id="painType_other" maxlength="100"
+                                    placeholder="other"
+                                    style="position: absolute; left: 1280px; top: 2390px; width: 270px; height: 80px; text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 35px; display: none;">
+
+
+
                             </div>
 
                             <div id="section_emotional">
@@ -2081,8 +2087,6 @@
                                     /
                                 </div>
 
-
-
                                 <input type="text" class="lbl-condensed-black" id="nevro_program" maxlength="4"
                                     placeholder="--" style="position: absolute; left: 350px; top: 6760px; width: 70px; height: 30px; 
                                     text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
@@ -2105,26 +2109,6 @@
                                 </button>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                 <script>
                                     function toggleCheckbox(element) {
                                         element.classList.toggle('checked');
@@ -2133,7 +2117,9 @@
                                         } else {
                                             element.style.backgroundImage = `url('${element.dataset.default}')`;
                                         }
+                                        updateNsOther();
                                     }
+
                                     function selectScale(clickedButton, scaleName) {
                                         const clickedValue = parseInt(clickedButton.dataset.value);
                                         const allButtons = document.querySelectorAll(`#${scaleName}_scale .scale-btn`);
@@ -2196,6 +2182,55 @@
                                     }
                                     window.addEventListener('load', setTodayAsDate);
                                 </script>
+
+                                <script>
+                                    function toggleCheckbox(element) {
+                                        element.classList.toggle('checked');
+                                        if (element.classList.contains('checked')) {
+                                            element.style.backgroundImage = `url('${element.dataset.pressed}')`;
+                                            element.setAttribute('data-state', 'pressed');
+                                        } else {
+                                            element.style.backgroundImage = `url('${element.dataset.default}')`;
+                                            element.setAttribute('data-state', 'default');
+                                        }
+
+                                        if (element.id === 'chk_nervousSystem_other') {
+                                            updateNervousSystemOther();
+                                        }
+                                        if (element.id === 'chk_painType_other') {
+                                            updatePainTypeOther();
+                                        }
+                                    }
+                                    const nsOtherButton = document.getElementById('chk_nervousSystem_other');
+                                    const nsOtherText = document.getElementById('nervousSystem_other');
+
+                                    function updateNervousSystemOther() {
+                                        const isOn = nsOtherButton.classList.contains('checked');
+                                        if (isOn) {
+                                            nsOtherText.style.display = 'inline-block';
+                                        } else {
+                                            nsOtherText.value = '';
+                                            nsOtherText.style.display = 'none';
+                                        }
+                                    }
+
+                                    const painTypeOtherButton = document.getElementById('chk_painType_other');
+                                    const painTypeOtherText = document.getElementById('painType_other');
+
+                                    function updatePainTypeOther() {
+                                        const isOn = painTypeOtherButton.classList.contains('checked');
+                                        if (isOn) {
+                                            painTypeOtherText.style.display = 'inline-block';
+                                        } else {
+                                            painTypeOtherText.value = '';
+                                            painTypeOtherText.style.display = 'none';
+                                        }
+                                    }
+
+                                    updateNervousSystemOther();
+                                    updatePainTypeOther();
+                                </script>
+
 
                                 </body>
 
