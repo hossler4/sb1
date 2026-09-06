@@ -1029,12 +1029,12 @@
                                     data-default="images/chk_painType_breaking_default.png"
                                     data-pressed="images/chk_painType_breaking_pressed.png"
                                     onclick="toggleCheckbox(this)"
-                                    style="background-image: url('images/chk_painType_breaking_default.png'); left: 1280px; top: 2296px;">
+                                    style="background-image: url('images/chk_painType_breaking_default.png'); left: 799px; top: 2399px;">
                                 </button>
                                 <button id="chk_painType_other" class="checkbox"
                                     data-default="images/chk_painType_other_default.png"
                                     data-pressed="images/chk_painType_other_pressed.png" onclick="toggleCheckbox(this)"
-                                    style="background-image: url('images/chk_painType_other_default.png'); left: 799px; top: 2399px;">
+                                    style="background-image: url('images/chk_painType_other_default.png'); left: 1280px; top: 2296px;">
                                 </button>
                                 <input type="text" class="lbl-regular" id="painType_other" maxlength="100"
                                     placeholder="other"
@@ -1697,6 +1697,8 @@
             data-pressed="images/chk_skinTemp_other_pressed.png" onclick="toggleCheckbox(this)"
             style="background-image: url('images/chk_skinTemp_other_default.png'); left: 1060px; top: 5197px;">
         </button>
+        <input type="text" class="lbl-regular" id="skinTemp_other" maxlength="100" placeholder="other"
+            style="position: absolute; left: 1060px; top: 5260px; width: 270px; height: 80px; text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 35px; display: none;">
 
 
         <div id="section_swelling">
@@ -1811,6 +1813,9 @@
                     data-pressed="images/chk_sensitivity_other_pressed.png" onclick="toggleCheckbox(this)"
                     style="background-image: url('images/chk_sensitivity_other_default.png'); left: 1166px; top: 5785px;">
                 </button>
+                <input type="text" class="lbl-regular" id="sensitivity_other" maxlength="100" placeholder="other"
+                    style="position: absolute; left: 1166px; top: 5845px; width: 270px; height: 80px; text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 35px; display: none;">
+
 
 
 
@@ -2200,11 +2205,18 @@
                                         if (element.id === 'chk_painType_other') {
                                             updatePainTypeOther();
                                         }
+                                        if (element.id === 'chk_skinTemp_other') {
+                                            updateSkinTempOther();
+                                        }
+
+                                        if (element.id === 'chk_sensitivity_other') {
+                                            updateSensitivityOther();
+                                        }
                                     }
-                                    const nsOtherButton = document.getElementById('chk_nervousSystem_other');
-                                    const nsOtherText = document.getElementById('nervousSystem_other');
 
                                     function updateNervousSystemOther() {
+                                        const nsOtherButton = document.getElementById('chk_nervousSystem_other');
+                                        const nsOtherText = document.getElementById('nervousSystem_other');
                                         const isOn = nsOtherButton.classList.contains('checked');
                                         if (isOn) {
                                             nsOtherText.style.display = 'inline-block';
@@ -2213,22 +2225,49 @@
                                             nsOtherText.style.display = 'none';
                                         }
                                     }
-
-                                    const painTypeOtherButton = document.getElementById('chk_painType_other');
-                                    const painTypeOtherText = document.getElementById('painType_other');
-
                                     function updatePainTypeOther() {
-                                        const isOn = painTypeOtherButton.classList.contains('checked');
+                                        const ptOtherButton = document.getElementById('chk_painType_other');
+                                        const ptOtherText = document.getElementById('painType_other');
+                                        const isOn = ptOtherButton.classList.contains('checked');
                                         if (isOn) {
-                                            painTypeOtherText.style.display = 'inline-block';
+                                            ptOtherText.style.display = 'inline-block';
                                         } else {
-                                            painTypeOtherText.value = '';
-                                            painTypeOtherText.style.display = 'none';
+                                            ptOtherText.value = '';
+                                            ptOtherText.style.display = 'none';
+                                        }
+                                    }
+                                    function updateSkinTempOther() {
+                                        const stOtherButton = document.getElementById('chk_skinTemp_other');
+                                        const stOtherText = document.getElementById('skinTemp_other');
+                                        const isOn = stOtherButton.classList.contains('checked');
+                                        if (isOn) {
+                                            stOtherText.style.display = 'inline-block';
+                                        } else {
+                                            stOtherText.value = '';
+                                            stOtherText.style.display = 'none';
+                                        }
+                                    }
+                                    function updateSensitivityOther() {
+                                        const snOtherButton = document.getElementById('chk_sensitivity_other');
+                                        const snOtherText = document.getElementById('sensitivity_other');
+                                        const isOn = snOtherButton.classList.contains('checked');
+                                        if (isOn) {
+                                            snOtherText.style.display = 'inline-block';
+                                        } else {
+                                            snOtherText.value = '';
+                                            snOtherText.style.display = 'none';
                                         }
                                     }
 
                                     updateNervousSystemOther();
                                     updatePainTypeOther();
+                                    updateSkinTempOther();
+                                    updateSensitivityOther();
+
+
+
+
+
                                 </script>
 
 
