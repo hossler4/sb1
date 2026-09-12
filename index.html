@@ -2306,7 +2306,7 @@
                                         // order: weatherType, tempHigh, tempLow, humidity, barometricPressure
 
                                         const painTypeValues = getpainTypeValues();
-                                        const rowArray = [weatherType, tempHigh, tempLow, humidity, barometricPressure, morningPainValue, middayPainValue, afternoonPainValue, eveningPainValue, ...painTypeValues];
+                                        const rowArray = [weatherType, tempHigh, tempLow, humidity, barometricPressure, morningPainValue, middayPainValue, afternoonPainValue, ...eveningPainValue, ...painTypeValues];
 
                                         const csvRow = rowArray
                                             .map(value => `"${String(value).replace(/"/g, '""')}"`)
