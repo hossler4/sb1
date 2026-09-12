@@ -199,7 +199,8 @@
 <div id="day_selector">
     <button class="day-btn" data-day="sun" data-default="images/btn_day_sun_default.png"
         data-pressed="images/btn_day_sun_pressed.png" onclick="selectDay(this, 'day_selector')"
-        style="background-image: url('images/btn_day_sun_default.png'); left: 40px; top: 68px; width: 80px; height: 90px;"></button>
+        style="background-image: url('images/btn_day_sun_default.png'); left: 40px; top: 68px; width: 80px; height: 90px;">
+    </button>
     <div id="day_selector">
         <button class="day-btn" data-day="mon" data-default="images/btn_day_mon_default.png"
             data-pressed="images/btn_day_mon_pressed.png" onclick="selectDay(this, 'day_selector')"
@@ -256,16 +257,16 @@
                                 style="position: absolute; left: 1435px; top: 378px; font-size: 45px;">
                                 inHg</div>
 
-                            <input type="text" class="lbl-regular" id="weather_high" maxlength="3" placeholder="HIGH"
+                            <input type="text" class="lbl-regular" id="weatherHigh" maxlength="3" placeholder="HIGH"
                                 style="position: absolute; left: 675px; top: 385px; width: 70px; height: 30px; text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
-                            <input type="text" class="lbl-regular" id="weather_low" maxlength="3" placeholder="LOW"
+                            <input type="text" class="lbl-regular" id="weatherLow" maxlength="3" placeholder="LOW"
                                 style="position: absolute; left: 819px; top: 385px; width: 70px; height: 30px; text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
-                            <input type="text" class="lbl-regular" id="weather_humidity" maxlength="2" placeholder="RH"
+                            <input type="text" class="lbl-regular" id="weatherHumidity" maxlength="2" placeholder="RH"
                                 style="position: absolute; left: 1140px; top: 385px; width: 65px; height: 30px; text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
-                            <input type="text" class="lbl-regular" id="weather_bp" maxlength="4" placeholder="BP"
-                                style="position: absolute; left: 1312px; top: 385px; width: 70px; height: 30px; text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
+                            <input type="text" class="lbl-regular" id="weatherBP" maxlength="5" placeholder="BP"
+                                style="position: absolute; left: 1312px; top: 385px; width: 82px; height: 30px; text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
 
-                            <select id="dd_weather" class="lbl-condensed-black"
+                            <select id="weatherType" class="lbl-condensed-black"
                                 style="position: absolute; left: 260px; top: 385px; width: 200px; height: 50px; font-size: 32px;">
                                 <option value="">Select...</option>
                                 <option value="sunny">sunny</option>
@@ -874,7 +875,7 @@
                                     </button>
                                     <button class="scale-btn" data-value="10"
                                         data-static="images/btn_painLevel_evening_10_static.png"
-                                        data-pressed="images/bbtn_painLevel_evening_10_pressed.png"
+                                        data-pressed="images/btn_painLevel_evening_10_pressed.png"
                                         onclick="selectScale(this, 'painLevel_evening')"
                                         style="background-image: url('images/btn_painLevel_evening_10_static.png'); left: 1460px; top: 1836px; width: 80px; height: 90px;">
                                     </button>
@@ -2113,6 +2114,7 @@
                                     style="background-image: url('images/chk_nevro_adjusted_no_default.png'); left: 1130px; top: 6760px;">
                                 </button>
 
+                                <button type="button" id="submitEntryBtn">Submit entry</button>
 
                                 <script>
                                     function toggleCheckbox(element) {
@@ -2131,26 +2133,20 @@
 
                                         allButtons.forEach(button => {
                                             const buttonValue = parseInt(button.dataset.value);
+
                                             if (buttonValue <= clickedValue) {
+                                                // turn on visual + class
+                                                button.style.backgroundImage = `url('${button.dataset.pressed}')`;
                                                 button.classList.add('checked');
                                             } else {
+                                                // turn off visual + class
+                                                button.style.backgroundImage = `url('${button.dataset.static}')`;
                                                 button.classList.remove('checked');
                                             }
                                         });
                                     }
-                                    function selectScale(clickedButton, scaleName) {
-                                        const clickedValue = parseInt(clickedButton.dataset.value);
-                                        const allButtons = document.querySelectorAll(`#${scaleName}_scale .scale-btn`);
 
-                                        allButtons.forEach(button => {
-                                            const buttonValue = parseInt(button.dataset.value);
-                                            if (buttonValue <= clickedValue) {
-                                                button.style.backgroundImage = `url('${button.dataset.pressed}')`;
-                                            } else {
-                                                button.style.backgroundImage = `url('${button.dataset.static}')`;
-                                            }
-                                        });
-                                    }
+                                    //day selector
                                     function selectDay(clickedButton, groupName) {
                                         const allButtons = document.querySelectorAll(`#${groupName} .day-btn`);
 
@@ -2188,7 +2184,7 @@
                                     window.addEventListener('load', setTodayAsDate);
                                 </script>
 
-                                <script>
+                                <script> //"other" boxes
                                     function toggleCheckbox(element) {
                                         element.classList.toggle('checked');
                                         if (element.classList.contains('checked')) {
@@ -2213,7 +2209,7 @@
                                             updateSensitivityOther();
                                         }
                                     }
-
+                                    //"other" box nervous system
                                     function updateNervousSystemOther() {
                                         const nsOtherButton = document.getElementById('chk_nervousSystem_other');
                                         const nsOtherText = document.getElementById('nervousSystem_other');
@@ -2225,6 +2221,7 @@
                                             nsOtherText.style.display = 'none';
                                         }
                                     }
+                                    //"other" box pain type
                                     function updatePainTypeOther() {
                                         const ptOtherButton = document.getElementById('chk_painType_other');
                                         const ptOtherText = document.getElementById('painType_other');
@@ -2236,6 +2233,7 @@
                                             ptOtherText.style.display = 'none';
                                         }
                                     }
+                                    //"other" box skin temp
                                     function updateSkinTempOther() {
                                         const stOtherButton = document.getElementById('chk_skinTemp_other');
                                         const stOtherText = document.getElementById('skinTemp_other');
@@ -2247,6 +2245,7 @@
                                             stOtherText.style.display = 'none';
                                         }
                                     }
+                                    //"other" box sensitivity
                                     function updateSensitivityOther() {
                                         const snOtherButton = document.getElementById('chk_sensitivity_other');
                                         const snOtherText = document.getElementById('sensitivity_other');
@@ -2263,14 +2262,102 @@
                                     updatePainTypeOther();
                                     updateSkinTempOther();
                                     updateSensitivityOther();
-
-
-
-
-
                                 </script>
 
 
+                                <script>
+                                    //data output
+                                    function getFullEntryCsvRow() {
+                                        const weatherType = document.getElementById('weatherType').value;
+                                        const tempHigh = document.getElementById('weatherHigh').value;
+                                        const tempLow = document.getElementById('weatherLow').value;
+                                        const humidity = document.getElementById('weatherHumidity').value;
+                                        const barometricPressure = document.getElementById('weatherBP').value;
+
+
+                                        // Morning pain
+                                        const morningCheckedButtons = document.querySelectorAll('#painLevel_morning_scale .checked');
+                                        let morningPainValue = '';
+                                        if (morningCheckedButtons.length > 0) {
+                                            const lastMorningChecked = morningCheckedButtons[morningCheckedButtons.length - 1];
+                                            morningPainValue = lastMorningChecked.getAttribute('data-value');
+                                        }
+                                        // Midday pain
+                                        const middayCheckedButtons = document.querySelectorAll('#painLevel_midday_scale .checked');
+                                        let middayPainValue = '';
+                                        if (middayCheckedButtons.length > 0) {
+                                            const lastMiddayChecked = middayCheckedButtons[middayCheckedButtons.length - 1];
+                                            middayPainValue = lastMiddayChecked.getAttribute('data-value');
+                                        }
+                                        // Afternoon pain
+                                        const afternoonCheckedButtons = document.querySelectorAll('#painLevel_afternoon_scale .checked');
+                                        let afternoonPainValue = '';
+                                        if (afternoonCheckedButtons.length > 0) {
+                                            const lastafternoonChecked = afternoonCheckedButtons[afternoonCheckedButtons.length - 1];
+                                            afternoonPainValue = lastafternoonChecked.getAttribute('data-value');
+                                        }
+                                        // Evening pain
+                                        const eveningCheckedButtons = document.querySelectorAll('#painLevel_evening_scale .checked');
+                                        let eveningPainValue = '';
+                                        if (eveningCheckedButtons.length > 0) {
+                                            const lasteveningChecked = eveningCheckedButtons[eveningCheckedButtons.length - 1];
+                                            eveningPainValue = lasteveningChecked.getAttribute('data-value');
+                                        }
+                                        // order: weatherType, tempHigh, tempLow, humidity, barometricPressure
+
+                                        const painTypeValues = getpainTypeValues();
+                                        const rowArray = [weatherType, tempHigh, tempLow, humidity, barometricPressure, morningPainValue,
+                                            middayPainValue, afternoonPainValue, ..., eveningPainValue, ...painTypeValues];
+
+                                        const csvRow = rowArray
+                                            .map(value => `"${String(value).replace(/"/g, '""')}"`)
+                                            .join(',');
+
+                                        console.log('csvRow:', csvRow);
+                                        return csvRow;
+                                    }
+                                    function getPainTypeValues() {
+                                        const ids = [
+                                            'chk_painType_burning',
+                                            'chk_painType_tightening',
+                                            'chk_painType_stabbing',
+                                            'chk_painType_freezing',
+                                            'chk_painType_throbbing',
+                                            'chk_painType_stinging',
+                                            'chk_painType_stiffness',
+                                            'chk_painType_radiating',
+                                            'chk_painType_electric',
+                                            'chk_painType_needles',
+                                            'chk_painType_growing',
+                                            'chk_painType_breaking',
+                                            'chk_painType_allodynia',
+                                            'chk_painType_crushing',
+                                            'chk_painType_other'
+                                        ];
+                                        return ids.map(id => {
+                                            const btn = document.getElementById(id);
+                                            return btn && btn.checked ? 'yes' : '';
+                                        });
+                                    }
+
+
+
+                                    document.getElementById('submitEntryBtn').addEventListener('click', handleSubmitEntry);
+                                    function handleSubmitEntry() {
+                                        const csvRow = getFullEntryCsvRow(); // later this will include everything, not just weather
+
+                                        const blob = new Blob([csvRow + '\n'], { type: 'text/csv;charset=utf-8;' });
+                                        const url = URL.createObjectURL(blob);
+                                        const link = document.createElement('a');
+                                        link.href = url;
+                                        link.download = 'pain-journal-entry.csv';
+                                        document.body.appendChild(link);
+                                        link.click();
+                                        document.body.removeChild(link);
+                                        URL.revokeObjectURL(url);
+                                    }
+
+                                </script>
                                 </body>
 
 </html>
