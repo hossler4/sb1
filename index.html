@@ -290,7 +290,6 @@
                             <div class="lbl-regular"
                                 style="position: absolute; left: 853px; top: 487px; font-size: 50px;">
                                 in clinic</div>
-
                             <div class="lbl-italic"
                                 style="position: absolute; left: 562px; top: 487px; font-size: 49px;">
                                 am</div>
@@ -322,7 +321,7 @@
                                 style="background-image: url('images/chk_workDay_office_pm_default.png'); left: 658px; top: 492px;">
                             </button>
                             <button id="chk_workDay_clinic_am" class="checkbox"
-                                data-default="images/cchk_workDay_clinic_am_default.png"
+                                data-default="images/chk_workDay_clinic_am_default.png"
                                 data-pressed="images/chk_workDay_clinic_am_pressed.png" onclick="toggleCheckbox(this)"
                                 style="background-image: url('images/chk_workDay_clinic_am_default.png'); left: 1038px; top: 492px;">
                             </button>
@@ -331,9 +330,9 @@
                                 data-pressed="images/chk_workDay_clinic_pm_pressed.png" onclick="toggleCheckbox(this)"
                                 style="background-image: url('images/chk_workDay_clinic_pm_default.png'); left: 1199px; top: 492px;">
                             </button>
-                            <button id="chk_workDay_cinic_wasAday" class="checkbox"
-                                data-default="images/chk_workDay_cinic_wasAday_default.png"
-                                data-pressed="images/chk_workDay_cinic_wasAday_pressed.png"
+                            <button id="chk_workDay_clinic_wasAday" class="checkbox"
+                                data-default="images/chk_workDay_clinic_wasAday_default.png"
+                                data-pressed="images/chk_workDay_clinic_wasAday_pressed.png"
                                 onclick="toggleCheckbox(this)"
                                 style="background-image: url('images/chk_workDay_clinic_wasAday_default.png'); left: 1358px; top: 492px;">
                             </button>
@@ -2262,17 +2261,47 @@
                                     updatePainTypeOther();
                                     updateSkinTempOther();
                                     updateSensitivityOther();
+
                                 </script>
 
 
                                 <script>
                                     //data output
                                     function getFullEntryCsvRow() {
+                                        const dateMM = document.getElementById('date_mm').value;
+                                        const dateDD = document.getElementById('date_dd').value;
+                                        const dateYYYY = document.getElementById('date_yyyy').value;
+                                        const fullDate = `${dateMM}-${dateDD}-${dateYYYY}`;
+                                        // or mm/dd/yyyy, whatever you want
+
+
                                         const weatherType = document.getElementById('weatherType').value;
                                         const tempHigh = document.getElementById('weatherHigh').value;
                                         const tempLow = document.getElementById('weatherLow').value;
                                         const humidity = document.getElementById('weatherHumidity').value;
-                                        const barometricPressure = document.getElementById('weatherBP').value;
+                                        const barometricPressure = document.getElementById('weatherBP').value
+
+
+                                        //sleepStress
+                                        const stressLevelCheckedButtons = document.querySelectorAll('#sleepStress_stressLevel_scale .checked');
+                                        let stressLevelValue = '';
+                                        if (stressLevelCheckedButtons.length > 0) {
+                                            const laststressLevelChecked = stressLevelCheckedButtons[stressLevelCheckedButtons.length - 1];
+                                            stressLevelValue = laststressLevelChecked.getAttribute('data-value');
+                                        }
+
+                                        //sleepQuality
+                                        const sleepQualityCheckedButtons = document.querySelectorAll('#sleepStress_sleepQuality_scale .checked');
+                                        let sleepQualityValue = '';
+                                        if (sleepQualityCheckedButtons.length > 0) {
+                                            const lastsleepQualityChecked = sleepQualityCheckedButtons[sleepQualityCheckedButtons.length - 1];
+                                            sleepQualityValue = lastsleepQualityChecked.getAttribute('data-value');
+                                        }
+
+
+
+
+
 
 
                                         // Morning pain
@@ -2305,8 +2334,17 @@
                                         }
                                         // order: weatherType, tempHigh, tempLow, humidity, barometricPressure
 
+                                        function getCheckboxValue(id) {
+                                            const el = document.getElementById(id);
+                                            if (!el) return ""; // safety so it doesn't break submit
+                                            return el.classList.contains('checked') ? "yes" : "";
+                                        }
+
                                         const painTypeValues = getpainTypeValues();
-                                        const rowArray = [weatherType, tempHigh, tempLow, humidity, barometricPressure, morningPainValue, middayPainValue, afternoonPainValue, ...eveningPainValue, ...painTypeValues];
+                                        const rowArray = [fullDate, weatherType, tempHigh, tempLow, humidity, barometricPressure,
+                                            getCheckboxValue('chk_workDay_office_am'), getCheckboxValue('chk_workDay_office_pm'), getCheckboxValue('chk_workDay_clinic_am'),
+                                            getCheckboxValue('chk_workDay_clinic_pm'), getCheckboxValue('chk_workDay_clinic_wasAday'),
+                                            stressLevelValue, sleepQualityValue, morningPainValue, middayPainValue, afternoonPainValue, eveningPainValue, ...painTypeValues];
 
                                         const csvRow = rowArray
                                             .map(value => `"${String(value).replace(/"/g, '""')}"`)
@@ -2315,7 +2353,8 @@
                                         console.log('csvRow:', csvRow);
                                         return csvRow;
                                     }
-                                    function getPainTypeValues() {
+
+                                    function getpainTypeValues() {
                                         const ids = [
                                             'chk_painType_burning',
                                             'chk_painType_tightening',
@@ -2326,8 +2365,8 @@
                                             'chk_painType_stiffness',
                                             'chk_painType_radiating',
                                             'chk_painType_electric',
-                                            'chk_painType_needles',
-                                            'chk_painType_growing',
+                                            'chk_painType_pinsNeedles',
+                                            'chk_painType_growingPains',
                                             'chk_painType_breaking',
                                             'chk_painType_allodynia',
                                             'chk_painType_crushing',
@@ -2335,11 +2374,9 @@
                                         ];
                                         return ids.map(id => {
                                             const btn = document.getElementById(id);
-                                            return btn && btn.checked ? 'yes' : '';
+                                            return btn && btn.classList.contains('checked') ? 'yes' : '';
                                         });
                                     }
-
-
 
                                     document.getElementById('submitEntryBtn').addEventListener('click', handleSubmitEntry);
                                     function handleSubmitEntry() {
