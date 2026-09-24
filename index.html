@@ -1289,18 +1289,21 @@
                                         style="background-image: url('images/btn_emotional_irritability_10_static.png'); left: 1460px; top: 2925px; width: 80px; height: 90px;">
                                     </button>
                                 </div>
-                                <button id="chk_emotional_discouraged_no" class="checkbox"
-                                    data-default="images/chk_emotional_discouraged_no_default.png"
-                                    data-pressed="images/chk_emotional_discouraged_no_pressed.png"
-                                    onclick="toggleCheckbox(this)"
-                                    style="background-image: url('images/chk_emotional_discouraged_no_default.png'); left: 645px; top: 3075px;">
-                                </button>
+
+
                                 <button id="chk_emotional_discouraged_yes" class="checkbox"
                                     data-default="images/chk_emotional_discouraged_yes_default.png"
                                     data-pressed="images/chk_emotional_discouraged_yes_pressed.png"
                                     onclick="toggleCheckbox(this)"
                                     style="background-image: url('images/chk_emotional_discouraged_yes_default.png'); left: 487px; top: 3075px;">
                                 </button>
+                                <button id="chk_emotional_discouraged_no" class="checkbox"
+                                    data-default="images/chk_emotional_discouraged_no_default.png"
+                                    data-pressed="images/chk_emotional_discouraged_no_pressed.png"
+                                    onclick="toggleCheckbox(this)"
+                                    style="background-image: url('images/chk_emotional_discouraged_no_default.png'); left: 645px; top: 3075px;">
+                                </button>
+
 
                                 <div id="section_activity">
                                     <!-- emotional stuff will go here -->
@@ -1360,25 +1363,26 @@
                                     </div>
 
 
-                                    <input type="text" class="lbl-condensed-black" id="readiness_score" maxlength="2"
+                                    <input type="text" class="lbl-condensed-black" id="readinessScore" maxlength="2"
                                         placeholder="--" style="position: absolute; left: 405px; top: 3345px; width: 70px; height: 30px; 
                                     text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
 
-                                    <input type="text" class="lbl-condensed-black" id="activity_high" maxlength="2"
+                                    <input type="text" class="lbl-condensed-black" id="activityHigh" maxlength="2"
                                         placeholder="--" style="position: absolute; left: 710px; top: 3345px; width: 70px; height: 30px; 
                                     text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
 
-                                    <input type="text" class="lbl-condensed-black" id="activity_low" maxlength="2"
+                                    <input type="text" class="lbl-condensed-black" id="activityLow" maxlength="2"
                                         placeholder="--" style="position: absolute; left: 860px; top: 3345px; width: 70px; height: 30px; 
                                     text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
 
-                                    <input type="text" class="lbl-condensed-black" id="activity_total_burn"
-                                        maxlength="2" placeholder="--" style="position: absolute; left: 1215px; top: 3345px; width: 70px; height: 30px; 
+                                    <input type="text" class="lbl-condensed-black" id="totalBurn" maxlength="2"
+                                        placeholder="--" style="position: absolute; left: 1215px; top: 3345px; width: 70px; height: 30px; 
                                     text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
 
-                                    <input type="text" class="lbl-condensed-black" id="activity_steps" maxlength="2"
+                                    <input type="text" class="lbl-condensed-black" id="activitySteps" maxlength="2"
                                         placeholder="--" style="position: absolute; left: 1470px; top: 3345px; width: 70px; height: 30px; 
                                     text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
+
 
                                     <button id="chk_metGoals_yes" class="checkbox"
                                         data-default="images/chk_activity_metGoals_yes_default.png"
@@ -1392,6 +1396,9 @@
                                         onclick="toggleCheckbox(this)"
                                         style="background-image: url('images/chk_activity_metGoals_no_default.png'); left: 563px; top: 3438px;">
                                     </button>
+
+
+
                                     <button id="chk_overdid_it_yes" class="checkbox"
                                         data-default="images/chk_activity_overdidit_yes_default.png"
                                         data-pressed="images/chk_activity_overdidit_yes_pressed.png"
@@ -1437,36 +1444,41 @@
                                             yes
                                         </div>
 
-                                        <button id="chk_painMapping_flareToday_yes_default" class="checkbox"
-                                            data-default="images/chk_painMapping_flareToday_yes_default.png"
-                                            data-pressed="images/chk_painMapping_flareToday_yes_pressed.png"
-                                            onclick="toggleCheckbox(this)"
-                                            style="background-image: url('images/chk_painMapping_flareToday_yes_default.png'); left: 405px; top: 3690px;">
-                                        </button>
-                                        <button id="chk_painMapping_flareToday_no_default" class="checkbox"
-                                            data-default="images/chk_painMapping_flareToday_no_default.png"
-                                            data-pressed="images/chk_painMapping_flareToday_no_pressed.png"
-                                            onclick="toggleCheckbox(this)"
-                                            style="background-image: url('images/chk_painMapping_flareToday_no_default.png'); left: 563px; top: 3690px;">
-                                        </button>
-                                        <button id="chk_painMapping_flareToday_mild_default" class="checkbox"
+                                        <div id="flareToday">
+                                            <button id="chk_painMapping_flareToday_yes" class="checkbox"
+                                                data-default="images/chk_painMapping_flareToday_yes_default.png"
+                                                data-pressed="images/chk_painMapping_flareToday_yes_pressed.png"
+                                                onclick="toggleCheckbox(this)"
+                                                style="background-image: url('images/chk_painMapping_flareToday_yes_default.png'); left: 405px; top: 3690px;">
+                                            </button>
+                                            <button id="chk_painMapping_flareToday_no" class="checkbox"
+                                                data-default="images/chk_painMapping_flareToday_no_default.png"
+                                                data-pressed="images/chk_painMapping_flareToday_no_pressed.png"
+                                                onclick="toggleCheckbox(this)"
+                                                style="background-image: url('images/chk_painMapping_flareToday_no_default.png'); left: 563px; top: 3690px;">
+                                            </button>
+                                        </div>
+
+
+                                        <button id="chk_painMapping_flareToday_mild" class="checkbox"
                                             data-default="images/chk_painMapping_flareToday_mild_default.png"
                                             data-pressed="images/chk_painMapping_flareToday_mild_pressed.png"
                                             onclick="toggleCheckbox(this)"
                                             style="background-image: url('images/chk_painMapping_flareToday_mild_default.png'); left: 798px; top: 3690px;">
                                         </button>
-                                        <button id="chk_painMapping_flareToday_moderate_default" class="checkbox"
+                                        <button id="chk_painMapping_flareToday_moderate" class="checkbox"
                                             data-default="images/chk_painMapping_flareToday_moderate_default.png"
                                             data-pressed="images/chk_painMapping_flareToday_moderate_pressed.png"
                                             onclick="toggleCheckbox(this)"
                                             style="background-image: url('images/chk_painMapping_flareToday_moderate_default.png'); left: 988px; top: 3690px;">
                                         </button>
-                                        <button id="chk_painMapping_flareToday_severe_default" class="checkbox"
+                                        <button id="chk_painMapping_flareToday_severe" class="checkbox"
                                             data-default="images/chk_painMapping_flareToday_severe_default.png"
                                             data-pressed="images/chk_painMapping_flareToday_severe_pressed.png"
                                             onclick="toggleCheckbox(this)"
                                             style="background-image: url('images/chk_painMapping_flareToday_severe_default.png'); left: 1269px; top: 3690px;">
                                         </button>
+
 
                                         <img class="abs" src="images/region_anteriorFoot.png"
                                             style="left: 1031px; top: 3839px; width: 292px; height: 646px;">
@@ -1697,8 +1709,8 @@
             data-pressed="images/chk_skinTemp_other_pressed.png" onclick="toggleCheckbox(this)"
             style="background-image: url('images/chk_skinTemp_other_default.png'); left: 1060px; top: 5197px;">
         </button>
-        <input type="text" class="lbl-regular" id="skinTemp_other" maxlength="100" placeholder="other"
-            style="position: absolute; left: 1060px; top: 5260px; width: 270px; height: 80px; text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 35px; display: none;">
+        <input type="text" class="lbl-regular" id="skinTemp_other" maxlength="100" placeholder="other" style="position: absolute; left: 1060px; top: 5260px; width: 270px; height: 80px; text-align: center; 
+            border: 2px solid #333; border-radius: 4px; font-size: 35px; display: none;">
 
 
         <div id="section_swelling">
@@ -1729,6 +1741,7 @@
                 yes
             </div>
 
+
             <button id="chk_swelling_none" class="checkbox" data-default="images/chk_swelling_none_default.png"
                 data-pressed="images/chk_swelling_none_pressed.png" onclick="toggleCheckbox(this)"
                 style="background-image: url('images/chk_swelling_none_default.png'); left: 121px; top: 5445px;">
@@ -1745,6 +1758,9 @@
                 data-pressed="images/chk_swelling_severe_pressed.png" onclick="toggleCheckbox(this)"
                 style="background-image: url('images/chk_swelling_severe_default.png'); left: 752px; top: 5445px;">
             </button>
+
+
+
             <button id="chk_swelling_pitting_yes" class="checkbox"
                 data-default="images/chk_swelling_pitting_yes_default.png"
                 data-pressed="images/chk_swelling_pitting_yes_pressed.png" onclick="toggleCheckbox(this)"
@@ -1755,6 +1771,7 @@
                 data-pressed="images/chk_swelling_pitting_no_pressed.png" onclick="toggleCheckbox(this)"
                 style="background-image: url('images/chk_swelling_pitting_no_default.png'); left: 1324px; top: 5445px;">
             </button>
+
 
             <div id="section_sensitivity">
                 <!-- sensitivity stuff will go here -->
@@ -1882,47 +1899,51 @@
                         no
                     </div>
 
-                    <button id="chk_walking_difficulty_limping_yes" class="checkbox"
+
+                    <button id="chk_walkingDifficulty_limping_yes" class="checkbox"
                         data-default="images/chk_walking_difficulty_limping_yes_default.png"
                         data-pressed="images/chk_walking_difficulty_limping_yes_pressed.png"
                         onclick="toggleCheckbox(this)"
                         style="background-image: url('images/chk_walking_difficulty_limping_yes_default.png'); left: 320px; top: 6485px;">
                     </button>
-                    <button id="chk_walking_difficulty_limping_no" class="checkbox"
+                    <button id="chk_walkingDifficulty_limping_no" class="checkbox"
                         data-default="images/chk_walking_difficulty_limping_no_default.png"
                         data-pressed="images/chk_walking_difficulty_limping_no_pressed.png"
                         onclick="toggleCheckbox(this)"
                         style="background-image: url('images/chk_walking_difficulty_limping_no_default.png'); left: 498px; top: 6485px;">
                     </button>
 
-                    <button id="chk_assisted_device_yes" class="checkbox"
+
+
+                    <button id="chk_assistedDevice_yes" class="checkbox"
                         data-default="images/chk_assisted_device_yes_default.png"
                         data-pressed="images/chk_assisted_device_yes_pressed.png" onclick="toggleCheckbox(this)"
                         style="background-image: url('images/chk_assisted_device_yes_default.png'); left: 1036px; top: 6485px;">
                     </button>
-                    <button id="chk_assisted_device_no" class="checkbox"
+                    <button id="chk_assistedDevice_no" class="checkbox"
                         data-default="images/chk_assisted_device_no_default.png"
                         data-pressed="images/chk_assisted_device_no_pressed.png" onclick="toggleCheckbox(this)"
                         style="background-image: url('images/chk_assisted_device_no_default.png'); left: 1194px; top: 6485px;">
                     </button>
-                    <button id="chk_walking_difficulty_none" class="checkbox"
+
+
+
+                    <button id="chk_walkingDifficulty_none" class="checkbox"
                         data-default="images/chk_walking_difficulty_none_default.png"
                         data-pressed="images/chk_walking_difficulty_none_pressed.png" onclick="toggleCheckbox(this)"
                         style="background-image: url('images/chk_assisted_device_no_default.png'); left: 320px; top: 6355px;">
                     </button>
-
-
-                    <button id="chk_walking_difficulty_mild" class="checkbox"
+                    <button id="chk_walkingDifficulty_mild" class="checkbox"
                         data-default="images/chk_walking_difficulty_mild_default.png"
                         data-pressed="images/chk_walking_difficulty_mild_pressed.png" onclick="toggleCheckbox(this)"
                         style="background-image: url('images/chk_walking_difficulty_mild_default.png'); left: 498px; top: 6355px;">
                     </button>
-                    <button id="chk_walking_difficulty_moderate" class="checkbox"
+                    <button id="chk_walkingDifficulty_moderate" class="checkbox"
                         data-default="images/chk_walking_difficulty_moderate_default.png"
                         data-pressed="images/chk_walking_difficulty_moderate_pressed.png" onclick="toggleCheckbox(this)"
                         style="background-image: url('images/chk_walking_difficulty_moderate_default.png'); left: 676px; top: 6355px;">
                     </button>
-                    <button id="chk_walking_difficulty_severe" class="checkbox"
+                    <button id="chk_walkingDifficulty_severe" class="checkbox"
                         data-default="images/chk_walking_difficulty_severe_default.png"
                         data-pressed="images/chk_walking_difficulty_severe_pressed.png" onclick="toggleCheckbox(this)"
                         style="background-image: url('images/chk_walking_difficulty_severe_default.png'); left: 930px; top: 6355px;">
@@ -1995,405 +2016,518 @@
                             onclick="selectScale(this, 'mobility_weightBearing')"
                             style="background-image: url('images/btn_mobility_weightBearing_10_static.png'); left: 1460px; top: 6050px; width: 80px; height: 90px;">
                         </button>
+                    </div>
 
+                    <div id="mobility_standingTolerance_scale">
+                        <button class="scale-btn" data-value="0"
+                            data-static="images/btn_mobility_standingTolerance_00_static.png"
+                            data-pressed="images/btn_mobility_standingTolerance_00_pressed.png"
+                            onclick="selectScale(this, 'mobility_standingTolerance')"
+                            style="background-image: url('images/btn_mobility_standingTolerance_00_static.png'); left: 260px; top: 6200px; width: 80px; height: 90px;">
+                        </button>
+                        <button class="scale-btn" data-value="1"
+                            data-static="images/btn_mobility_standingTolerance_01_static.png"
+                            data-pressed="images/btn_mobility_standingTolerance_01_pressed.png"
+                            onclick="selectScale(this, 'mobility_standingTolerance')"
+                            style="background-image: url('images/btn_mobility_standingTolerance_01_static.png'); left: 380px; top: 6200px; width: 80px; height: 90px;">
+                        </button>
+                        <button class="scale-btn" data-value="2"
+                            data-static="images/btn_mobility_standingTolerance_02_static.png"
+                            data-pressed="images/btn_mobility_standingTolerance_02_pressed.png"
+                            onclick="selectScale(this, 'mobility_standingTolerance')"
+                            style="background-image: url('images/btn_mobility_standingTolerance_02_static.png'); left: 500px; top: 6200px; width: 80px; height: 90px;">
+                        </button>
+                        <button class="scale-btn" data-value="3"
+                            data-static="images/btn_mobility_standingTolerance_03_static.png"
+                            data-pressed="images/btn_mobility_standingTolerance_03_pressed.png"
+                            onclick="selectScale(this, 'mobility_standingTolerance')"
+                            style="background-image: url('images/btn_mobility_standingTolerance_03_static.png'); left: 620px; top: 6200px; width: 80px; height: 90px;">
+                        </button>
+                        <button class="scale-btn" data-value="4"
+                            data-static="images/btn_mobility_standingTolerance_04_static.png"
+                            data-pressed="images/btn_mobility_standingTolerance_04_pressed.png"
+                            onclick="selectScale(this, 'mobility_standingTolerance')"
+                            style="background-image: url('images/btn_mobility_standingTolerance_04_static.png'); left: 740px; top: 6200px; width: 80px; height: 90px;">
+                        </button>
+                        <button class="scale-btn" data-value="5"
+                            data-static="images/btn_mobility_standingTolerance_05_static.png"
+                            data-pressed="images/btn_mobility_standingTolerance_05_pressed.png"
+                            onclick="selectScale(this, 'mobility_standingTolerance')"
+                            style="background-image: url('images/btn_mobility_standingTolerance_05_static.png'); left: 860px; top: 6200px; width: 80px; height: 90px;">
+                        </button>
+                        <button class="scale-btn" data-value="6"
+                            data-static="images/btn_mobility_standingTolerance_06_static.png"
+                            data-pressed="images/btn_mobility_standingTolerance_06_pressed.png"
+                            onclick="selectScale(this, 'mobility_standingTolerance')"
+                            style="background-image: url('images/btn_mobility_standingTolerance_06_static.png'); left: 980px; top: 6200px; width: 80px; height: 90px;">
+                        </button>
+                        <button class="scale-btn" data-value="7"
+                            data-static="images/btn_mobility_standingTolerance_07_static.png"
+                            data-pressed="images/btn_mobility_standingTolerance_07_pressed.png"
+                            onclick="selectScale(this, 'mobility_standingTolerance')"
+                            style="background-image: url('images/btn_mobility_standingTolerance_07_static.png'); left: 1100px; top: 6200px; width: 80px; height: 90px;">
+                        </button>
+                        <button class="scale-btn" data-value="8"
+                            data-static="images/btn_mobility_standingTolerance_08_static.png"
+                            data-pressed="images/btn_mobility_standingTolerance_08_pressed.png"
+                            onclick="selectScale(this, 'mobility_standingTolerance')"
+                            style="background-image: url('images/btn_mobility_standingTolerance_08_static.png'); left: 1220px; top: 6200px; width: 80px; height: 90px;">
+                        </button>
+                        <button class="scale-btn" data-value="9"
+                            data-static="images/btn_mobility_standingTolerance_09_static.png"
+                            data-pressed="images/btn_mobility_standingTolerance_09_pressed.png"
+                            onclick="selectScale(this, 'mobility_standingTolerance')"
+                            style="background-image: url('images/btn_mobility_standingTolerance_09_static.png'); left: 1340px; top: 6200px; width: 80px; height: 90px;">
+                        </button>
+                        <button class="scale-btn" data-value="10"
+                            data-static="images/btn_mobility_standingTolerance_10_static.png"
+                            data-pressed="images/btn_mobility_standingTolerance_10_pressed.png"
+                            onclick="selectScale(this, 'mobility_standingTolerance')"
+                            style="background-image: url('images/btn_mobility_standingTolerance_10_static.png'); left: 1460px; top: 6200px; width: 80px; height: 90px;">
+                        </button>
 
-                        <div id="mobility_standingTolerance_scale">
-                            <button class="scale-btn" data-value="0"
-                                data-static="images/btn_mobility_standingTolerance_00_static.png"
-                                data-pressed="images/btn_mobility_standingTolerance_00_pressed.png"
-                                onclick="selectScale(this, 'mobility_standingTolerance')"
-                                style="background-image: url('images/btn_mobility_standingTolerance_00_static.png'); left: 260px; top: 6200px; width: 80px; height: 90px;">
-                            </button>
-                            <button class="scale-btn" data-value="1"
-                                data-static="images/btn_mobility_standingTolerance_01_static.png"
-                                data-pressed="images/btn_mobility_standingTolerance_01_pressed.png"
-                                onclick="selectScale(this, 'mobility_standingTolerance')"
-                                style="background-image: url('images/btn_mobility_standingTolerance_01_static.png'); left: 380px; top: 6200px; width: 80px; height: 90px;">
-                            </button>
-                            <button class="scale-btn" data-value="2"
-                                data-static="images/btn_mobility_standingTolerance_02_static.png"
-                                data-pressed="images/btn_mobility_standingTolerance_02_pressed.png"
-                                onclick="selectScale(this, 'mobility_standingTolerance')"
-                                style="background-image: url('images/btn_mobility_standingTolerance_02_static.png'); left: 500px; top: 6200px; width: 80px; height: 90px;">
-                            </button>
-                            <button class="scale-btn" data-value="3"
-                                data-static="images/btn_mobility_standingTolerance_03_static.png"
-                                data-pressed="images/btn_mobility_standingTolerance_03_pressed.png"
-                                onclick="selectScale(this, 'mobility_standingTolerance')"
-                                style="background-image: url('images/btn_mobility_standingTolerance_03_static.png'); left: 620px; top: 6200px; width: 80px; height: 90px;">
-                            </button>
-                            <button class="scale-btn" data-value="4"
-                                data-static="images/btn_mobility_standingTolerance_04_static.png"
-                                data-pressed="images/btn_mobility_standingTolerance_04_pressed.png"
-                                onclick="selectScale(this, 'mobility_standingTolerance')"
-                                style="background-image: url('images/btn_mobility_standingTolerance_04_static.png'); left: 740px; top: 6200px; width: 80px; height: 90px;">
-                            </button>
-                            <button class="scale-btn" data-value="5"
-                                data-static="images/btn_mobility_standingTolerance_05_static.png"
-                                data-pressed="images/btn_mobility_standingTolerance_05_pressed.png"
-                                onclick="selectScale(this, 'mobility_standingTolerance')"
-                                style="background-image: url('images/btn_mobility_standingTolerance_05_static.png'); left: 860px; top: 6200px; width: 80px; height: 90px;">
-                            </button>
-                            <button class="scale-btn" data-value="6"
-                                data-static="images/btn_mobility_standingTolerance_06_static.png"
-                                data-pressed="images/btn_mobility_standingTolerance_06_pressed.png"
-                                onclick="selectScale(this, 'mobility_standingTolerance')"
-                                style="background-image: url('images/btn_mobility_standingTolerance_06_static.png'); left: 980px; top: 6200px; width: 80px; height: 90px;">
-                            </button>
-                            <button class="scale-btn" data-value="7"
-                                data-static="images/btn_mobility_standingTolerance_07_static.png"
-                                data-pressed="images/btn_mobility_standingTolerance_07_pressed.png"
-                                onclick="selectScale(this, 'mobility_standingTolerance')"
-                                style="background-image: url('images/btn_mobility_standingTolerance_07_static.png'); left: 1100px; top: 6200px; width: 80px; height: 90px;">
-                            </button>
-                            <button class="scale-btn" data-value="8"
-                                data-static="images/btn_mobility_standingTolerance_08_static.png"
-                                data-pressed="images/btn_mobility_standingTolerance_08_pressed.png"
-                                onclick="selectScale(this, 'mobility_standingTolerance')"
-                                style="background-image: url('images/btn_mobility_standingTolerance_08_static.png'); left: 1220px; top: 6200px; width: 80px; height: 90px;">
-                            </button>
-                            <button class="scale-btn" data-value="9"
-                                data-static="images/btn_mobility_standingTolerance_09_static.png"
-                                data-pressed="images/btn_mobility_standingTolerance_09_pressed.png"
-                                onclick="selectScale(this, 'mobility_standingTolerance')"
-                                style="background-image: url('images/btn_mobility_standingTolerance_09_static.png'); left: 1340px; top: 6200px; width: 80px; height: 90px;">
-                            </button>
-                            <button class="scale-btn" data-value="10"
-                                data-static="images/btn_mobility_standingTolerance_10_static.png"
-                                data-pressed="images/btn_mobility_standingTolerance_10_pressed.png"
-                                onclick="selectScale(this, 'mobility_standingTolerance')"
-                                style="background-image: url('images/btn_mobility_standingTolerance_10_static.png'); left: 1460px; top: 6200px; width: 80px; height: 90px;">
-                            </button>
+                        <div id="section_nevro">
+                            <!-- nevro stuff will go here -->
+                            <div class="lbl-condensed-black"
+                                style="position: absolute; left: 40px; top: 6600px; font-size: 55px;">
+                                nevro settings
+                            </div>
+                            <div class="lbl-condensed-black"
+                                style="position: absolute; left: 80px; top: 6760px; font-size: 42px;">
+                                program/level
+                            </div>
+                            <div class="lbl-condensed-black"
+                                style="position: absolute; left: 642px; top: 6760px; font-size: 42px;">
+                                adjusted today?
+                            </div>
+                            <div class="lbl-italic"
+                                style="position: absolute; left: 1194px; top: 6760px; font-size: 42px;">
+                                no
+                            </div>
+                            <div class="lbl-italic"
+                                style="position: absolute; left: 1036px; top: 6760px; font-size: 42px;">
+                                yes
+                            </div>
+                            <div class="lbl-condensed-black"
+                                style="position: absolute; left: 475px; top: 6760px; font-size: 47px;">
+                                /
+                            </div>
 
-                            <div id="section_nevro">
-                                <!-- nevro stuff will go here -->
-                                <div class="lbl-condensed-black"
-                                    style="position: absolute; left: 40px; top: 6600px; font-size: 55px;">
-                                    nevro settings
-                                </div>
-                                <div class="lbl-condensed-black"
-                                    style="position: absolute; left: 80px; top: 6760px; font-size: 42px;">
-                                    program/level
-                                </div>
-                                <div class="lbl-condensed-black"
-                                    style="position: absolute; left: 642px; top: 6760px; font-size: 42px;">
-                                    adjusted today?
-                                </div>
-                                <div class="lbl-italic"
-                                    style="position: absolute; left: 1194px; top: 6760px; font-size: 42px;">
-                                    no
-                                </div>
-                                <div class="lbl-italic"
-                                    style="position: absolute; left: 1036px; top: 6760px; font-size: 42px;">
-                                    yes
-                                </div>
-                                <div class="lbl-condensed-black"
-                                    style="position: absolute; left: 475px; top: 6760px; font-size: 47px;">
-                                    /
-                                </div>
-
-                                <input type="text" class="lbl-condensed-black" id="nevro_program" maxlength="4"
-                                    placeholder="--" style="position: absolute; left: 350px; top: 6760px; width: 70px; height: 30px; 
+                            <input type="text" class="lbl-condensed-black" id="nevroProgram" maxlength="4"
+                                placeholder="--" style="position: absolute; left: 350px; top: 6760px; width: 70px; height: 30px; 
                                     text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
 
-                                <input type="text" class="lbl-condensed-black" id="nevro_level" maxlength="4"
-                                    placeholder="--" style="position: absolute; left: 496px; top: 6760px; width: 70px; height: 30px; 
+                            <input type="text" class="lbl-condensed-black" id="nevroLevel" maxlength="4"
+                                placeholder="--" style="position: absolute; left: 496px; top: 6760px; width: 70px; height: 30px; 
                                     text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
 
-                                <button id="chk_nevro_adjusted_yes" class="checkbox"
-                                    data-default="images/chk_nevro_adjusted_yes_default.png"
-                                    data-pressed="images/chk_nevro_adjusted_yes_pressed.png"
-                                    onclick="toggleCheckbox(this)"
-                                    style="background-image: url('images/chk_nevro_adjusted_yes_default.png'); left: 972px; top: 6760px;">
-                                </button>
-                                <button id="chk_nevro_adjusted_no" class="checkbox"
-                                    data-default="images/chk_nevro_adjusted_no_default.png"
-                                    data-pressed="images/chk_nevro_adjusted_no_pressed.png"
-                                    onclick="toggleCheckbox(this)"
-                                    style="background-image: url('images/chk_nevro_adjusted_no_default.png'); left: 1130px; top: 6760px;">
-                                </button>
 
-                                <button type="button" id="submitEntryBtn">Submit entry</button>
+                            <button id="chk_nevro_adjusted_yes" class="checkbox"
+                                data-default="images/chk_nevro_adjusted_yes_default.png"
+                                data-pressed="images/chk_nevro_adjusted_yes_pressed.png" onclick="toggleCheckbox(this)"
+                                style="background-image: url('images/chk_nevro_adjusted_yes_default.png'); left: 972px; top: 6760px;">
+                            </button>
+                            <button id="chk_nevro_adjusted_no" class="checkbox"
+                                data-default="images/chk_nevro_adjusted_no_default.png"
+                                data-pressed="images/chk_nevro_adjusted_no_pressed.png" onclick="toggleCheckbox(this)"
+                                style="background-image: url('images/chk_nevro_adjusted_no_default.png'); left: 1130px; top: 6760px;">
+                            </button>
 
-                                <script>
-                                    function toggleCheckbox(element) {
-                                        element.classList.toggle('checked');
-                                        if (element.classList.contains('checked')) {
-                                            element.style.backgroundImage = `url('${element.dataset.pressed}')`;
+
+                            <button type="button" id="submitEntryBtn">Submit entry</button>
+
+                            <script>
+                                function toggleCheckbox(element) {
+                                    let parent = element.parentElement;
+                                    let other = parent.querySelector('button.checked');
+                                    if (other && other !== element) {
+                                        other.classList.remove('checked');
+                                        other.style.backgroundImage = `url('${other.dataset.default}')`;
+                                    }
+                                    if (element.classList.contains('checked')) {
+                                        element.style.backgroundImage = `url('${element.dataset.pressed}')`;
+                                    } else {
+                                        element.style.backgroundImage = `url('${element.dataset.default}')`;
+                                    }
+                                }
+
+                                function selectScale(clickedButton, scaleName) {
+                                    const clickedValue = parseInt(clickedButton.dataset.value);
+                                    const allButtons = document.querySelectorAll(`#${scaleName}_scale .scale-btn`);
+
+                                    allButtons.forEach(button => {
+                                        const buttonValue = parseInt(button.dataset.value);
+
+                                        if (buttonValue <= clickedValue) {
+                                            // turn on visual + class
+                                            button.style.backgroundImage = `url('${button.dataset.pressed}')`;
+                                            button.classList.add('checked');
                                         } else {
-                                            element.style.backgroundImage = `url('${element.dataset.default}')`;
+                                            // turn off visual + class
+                                            button.style.backgroundImage = `url('${button.dataset.static}')`;
+                                            button.classList.remove('checked');
                                         }
-                                        updateNsOther();
-                                    }
+                                    });
+                                }
 
-                                    function selectScale(clickedButton, scaleName) {
-                                        const clickedValue = parseInt(clickedButton.dataset.value);
-                                        const allButtons = document.querySelectorAll(`#${scaleName}_scale .scale-btn`);
+                                //day selector
+                                function selectDay(clickedButton, groupName) {
+                                    const allButtons = document.querySelectorAll(`#${groupName} .day-btn`);
 
-                                        allButtons.forEach(button => {
-                                            const buttonValue = parseInt(button.dataset.value);
-
-                                            if (buttonValue <= clickedValue) {
-                                                // turn on visual + class
-                                                button.style.backgroundImage = `url('${button.dataset.pressed}')`;
-                                                button.classList.add('checked');
-                                            } else {
-                                                // turn off visual + class
-                                                button.style.backgroundImage = `url('${button.dataset.static}')`;
-                                                button.classList.remove('checked');
-                                            }
-                                        });
-                                    }
-
-                                    //day selector
-                                    function selectDay(clickedButton, groupName) {
-                                        const allButtons = document.querySelectorAll(`#${groupName} .day-btn`);
-
-                                        allButtons.forEach(button => {
-                                            if (button === clickedButton) {
-                                                button.style.backgroundImage = `url('${button.dataset.pressed}')`;
-                                            } else {
-                                                button.style.backgroundImage = `url('${button.dataset.default}')`;
-                                            }
-                                        });
-                                    }
-                                    function setTodayAsDefault() {
-                                        const days = ['sun', 'mon', 'tues', 'wed', 'thurs', 'fri', 'sat'];
-                                        const todayIndex = new Date().getDay(); // 0 = Sunday, 6 = Saturday
-                                        const todayName = days[todayIndex];
-                                        const todayButton = document.querySelector(`.day-btn[data-day="${todayName}"]`);
-
-                                        if (todayButton) {
-                                            selectDay(todayButton, 'day_selector');
-                                        }
-                                    }
-
-                                    window.addEventListener('load', setTodayAsDefault);
-
-                                    function setTodayAsDate() {
-                                        const today = new Date();
-                                        const mm = String(today.getMonth() + 1).padStart(2, '0');
-                                        const dd = String(today.getDate()).padStart(2, '0');
-                                        const yyyy = today.getFullYear();
-
-                                        document.getElementById('date_mm').value = mm;
-                                        document.getElementById('date_dd').value = dd;
-                                        document.getElementById('date_yyyy').value = yyyy;
-                                    }
-                                    window.addEventListener('load', setTodayAsDate);
-                                </script>
-
-                                <script> //"other" boxes
-                                    function toggleCheckbox(element) {
-                                        element.classList.toggle('checked');
-                                        if (element.classList.contains('checked')) {
-                                            element.style.backgroundImage = `url('${element.dataset.pressed}')`;
-                                            element.setAttribute('data-state', 'pressed');
+                                    allButtons.forEach(button => {
+                                        if (button === clickedButton) {
+                                            button.style.backgroundImage = `url('${button.dataset.pressed}')`;
                                         } else {
-                                            element.style.backgroundImage = `url('${element.dataset.default}')`;
-                                            element.setAttribute('data-state', 'default');
+                                            button.style.backgroundImage = `url('${button.dataset.default}')`;
                                         }
+                                    });
+                                }
+                                function setTodayAsDefault() {
+                                    const days = ['sun', 'mon', 'tues', 'wed', 'thurs', 'fri', 'sat'];
+                                    const todayIndex = new Date().getDay(); // 0 = Sunday, 6 = Saturday
+                                    const todayName = days[todayIndex];
+                                    const todayButton = document.querySelector(`.day-btn[data-day="${todayName}"]`);
 
-                                        if (element.id === 'chk_nervousSystem_other') {
-                                            updateNervousSystemOther();
-                                        }
-                                        if (element.id === 'chk_painType_other') {
-                                            updatePainTypeOther();
-                                        }
-                                        if (element.id === 'chk_skinTemp_other') {
-                                            updateSkinTempOther();
-                                        }
+                                    if (todayButton) {
+                                        selectDay(todayButton, 'day_selector');
+                                    }
+                                }
 
-                                        if (element.id === 'chk_sensitivity_other') {
-                                            updateSensitivityOther();
-                                        }
-                                    }
-                                    //"other" box nervous system
-                                    function updateNervousSystemOther() {
-                                        const nsOtherButton = document.getElementById('chk_nervousSystem_other');
-                                        const nsOtherText = document.getElementById('nervousSystem_other');
-                                        const isOn = nsOtherButton.classList.contains('checked');
-                                        if (isOn) {
-                                            nsOtherText.style.display = 'inline-block';
-                                        } else {
-                                            nsOtherText.value = '';
-                                            nsOtherText.style.display = 'none';
-                                        }
-                                    }
-                                    //"other" box pain type
-                                    function updatePainTypeOther() {
-                                        const ptOtherButton = document.getElementById('chk_painType_other');
-                                        const ptOtherText = document.getElementById('painType_other');
-                                        const isOn = ptOtherButton.classList.contains('checked');
-                                        if (isOn) {
-                                            ptOtherText.style.display = 'inline-block';
-                                        } else {
-                                            ptOtherText.value = '';
-                                            ptOtherText.style.display = 'none';
-                                        }
-                                    }
-                                    //"other" box skin temp
-                                    function updateSkinTempOther() {
-                                        const stOtherButton = document.getElementById('chk_skinTemp_other');
-                                        const stOtherText = document.getElementById('skinTemp_other');
-                                        const isOn = stOtherButton.classList.contains('checked');
-                                        if (isOn) {
-                                            stOtherText.style.display = 'inline-block';
-                                        } else {
-                                            stOtherText.value = '';
-                                            stOtherText.style.display = 'none';
-                                        }
-                                    }
-                                    //"other" box sensitivity
-                                    function updateSensitivityOther() {
-                                        const snOtherButton = document.getElementById('chk_sensitivity_other');
-                                        const snOtherText = document.getElementById('sensitivity_other');
-                                        const isOn = snOtherButton.classList.contains('checked');
-                                        if (isOn) {
-                                            snOtherText.style.display = 'inline-block';
-                                        } else {
-                                            snOtherText.value = '';
-                                            snOtherText.style.display = 'none';
-                                        }
+                                window.addEventListener('load', setTodayAsDefault);
+
+                                function setTodayAsDate() {
+                                    const today = new Date();
+                                    const mm = String(today.getMonth() + 1).padStart(2, '0');
+                                    const dd = String(today.getDate()).padStart(2, '0');
+                                    const yyyy = today.getFullYear();
+
+                                    document.getElementById('date_mm').value = mm;
+                                    document.getElementById('date_dd').value = dd;
+                                    document.getElementById('date_yyyy').value = yyyy;
+                                }
+                                window.addEventListener('load', setTodayAsDate);
+                            </script>
+
+                            <script> //"other" boxes
+                                function toggleCheckbox(element) {
+                                    element.classList.toggle('checked');
+                                    if (element.classList.contains('checked')) {
+                                        element.style.backgroundImage = `url('${element.dataset.pressed}')`;
+                                        element.setAttribute('data-state', 'pressed');
+                                    } else {
+                                        element.style.backgroundImage = `url('${element.dataset.default}')`;
+                                        element.setAttribute('data-state', 'default');
                                     }
 
-                                    updateNervousSystemOther();
-                                    updatePainTypeOther();
-                                    updateSkinTempOther();
-                                    updateSensitivityOther();
-
-                                </script>
-
-
-                                <script>
-                                    //data output
-                                    function getFullEntryCsvRow() {
-                                        const dateMM = document.getElementById('date_mm').value;
-                                        const dateDD = document.getElementById('date_dd').value;
-                                        const dateYYYY = document.getElementById('date_yyyy').value;
-                                        const fullDate = `${dateMM}-${dateDD}-${dateYYYY}`;
-                                        // or mm/dd/yyyy, whatever you want
-
-
-                                        const weatherType = document.getElementById('weatherType').value;
-                                        const tempHigh = document.getElementById('weatherHigh').value;
-                                        const tempLow = document.getElementById('weatherLow').value;
-                                        const humidity = document.getElementById('weatherHumidity').value;
-                                        const barometricPressure = document.getElementById('weatherBP').value
-
-
-                                        //sleepStress
-                                        const stressLevelCheckedButtons = document.querySelectorAll('#sleepStress_stressLevel_scale .checked');
-                                        let stressLevelValue = '';
-                                        if (stressLevelCheckedButtons.length > 0) {
-                                            const laststressLevelChecked = stressLevelCheckedButtons[stressLevelCheckedButtons.length - 1];
-                                            stressLevelValue = laststressLevelChecked.getAttribute('data-value');
-                                        }
-
-                                        //sleepQuality
-                                        const sleepQualityCheckedButtons = document.querySelectorAll('#sleepStress_sleepQuality_scale .checked');
-                                        let sleepQualityValue = '';
-                                        if (sleepQualityCheckedButtons.length > 0) {
-                                            const lastsleepQualityChecked = sleepQualityCheckedButtons[sleepQualityCheckedButtons.length - 1];
-                                            sleepQualityValue = lastsleepQualityChecked.getAttribute('data-value');
-                                        }
-
-
-
-
-
-
-
-                                        // Morning pain
-                                        const morningCheckedButtons = document.querySelectorAll('#painLevel_morning_scale .checked');
-                                        let morningPainValue = '';
-                                        if (morningCheckedButtons.length > 0) {
-                                            const lastMorningChecked = morningCheckedButtons[morningCheckedButtons.length - 1];
-                                            morningPainValue = lastMorningChecked.getAttribute('data-value');
-                                        }
-                                        // Midday pain
-                                        const middayCheckedButtons = document.querySelectorAll('#painLevel_midday_scale .checked');
-                                        let middayPainValue = '';
-                                        if (middayCheckedButtons.length > 0) {
-                                            const lastMiddayChecked = middayCheckedButtons[middayCheckedButtons.length - 1];
-                                            middayPainValue = lastMiddayChecked.getAttribute('data-value');
-                                        }
-                                        // Afternoon pain
-                                        const afternoonCheckedButtons = document.querySelectorAll('#painLevel_afternoon_scale .checked');
-                                        let afternoonPainValue = '';
-                                        if (afternoonCheckedButtons.length > 0) {
-                                            const lastafternoonChecked = afternoonCheckedButtons[afternoonCheckedButtons.length - 1];
-                                            afternoonPainValue = lastafternoonChecked.getAttribute('data-value');
-                                        }
-                                        // Evening pain
-                                        const eveningCheckedButtons = document.querySelectorAll('#painLevel_evening_scale .checked');
-                                        let eveningPainValue = '';
-                                        if (eveningCheckedButtons.length > 0) {
-                                            const lasteveningChecked = eveningCheckedButtons[eveningCheckedButtons.length - 1];
-                                            eveningPainValue = lasteveningChecked.getAttribute('data-value');
-                                        }
-                                        // order: weatherType, tempHigh, tempLow, humidity, barometricPressure
-
-                                        function getCheckboxValue(id) {
-                                            const el = document.getElementById(id);
-                                            if (!el) return ""; // safety so it doesn't break submit
-                                            return el.classList.contains('checked') ? "yes" : "";
-                                        }
-
-                                        const painTypeValues = getpainTypeValues();
-                                        const rowArray = [fullDate, weatherType, tempHigh, tempLow, humidity, barometricPressure,
-                                            getCheckboxValue('chk_workDay_office_am'), getCheckboxValue('chk_workDay_office_pm'), getCheckboxValue('chk_workDay_clinic_am'),
-                                            getCheckboxValue('chk_workDay_clinic_pm'), getCheckboxValue('chk_workDay_clinic_wasAday'),
-                                            stressLevelValue, sleepQualityValue, morningPainValue, middayPainValue, afternoonPainValue, eveningPainValue, ...painTypeValues];
-
-                                        const csvRow = rowArray
-                                            .map(value => `"${String(value).replace(/"/g, '""')}"`)
-                                            .join(',');
-
-                                        console.log('csvRow:', csvRow);
-                                        return csvRow;
+                                    if (element.id === 'chk_nervousSystem_other') {
+                                        updateNervousSystemOther();
+                                    }
+                                    if (element.id === 'chk_painType_other') {
+                                        updatePainTypeOther();
+                                    }
+                                    if (element.id === 'chk_skinTemp_other') {
+                                        updateSkinTempOther();
                                     }
 
-                                    function getpainTypeValues() {
-                                        const ids = [
-                                            'chk_painType_burning',
-                                            'chk_painType_tightening',
-                                            'chk_painType_stabbing',
-                                            'chk_painType_freezing',
-                                            'chk_painType_throbbing',
-                                            'chk_painType_stinging',
-                                            'chk_painType_stiffness',
-                                            'chk_painType_radiating',
-                                            'chk_painType_electric',
-                                            'chk_painType_pinsNeedles',
-                                            'chk_painType_growingPains',
-                                            'chk_painType_breaking',
-                                            'chk_painType_allodynia',
-                                            'chk_painType_crushing',
-                                            'chk_painType_other'
-                                        ];
-                                        return ids.map(id => {
-                                            const btn = document.getElementById(id);
-                                            return btn && btn.classList.contains('checked') ? 'yes' : '';
-                                        });
+                                    if (element.id === 'chk_sensitivity_other') {
+                                        updateSensitivityOther();
+                                    }
+                                }
+                                //"other" box nervous system
+                                function updateNervousSystemOther() {
+                                    const nsOtherButton = document.getElementById('chk_nervousSystem_other');
+                                    const nsOtherText = document.getElementById('nervousSystem_other');
+                                    const isOn = nsOtherButton.classList.contains('checked');
+                                    if (isOn) {
+                                        nsOtherText.style.display = 'inline-block';
+                                    } else {
+                                        nsOtherText.value = '';
+                                        nsOtherText.style.display = 'none';
+                                    }
+                                }
+                                //"other" box pain type
+                                function updatePainTypeOther() {
+                                    const ptOtherButton = document.getElementById('chk_painType_other');
+                                    const ptOtherText = document.getElementById('painType_other');
+                                    const isOn = ptOtherButton.classList.contains('checked');
+                                    if (isOn) {
+                                        ptOtherText.style.display = 'inline-block';
+                                    } else {
+                                        ptOtherText.value = '';
+                                        ptOtherText.style.display = 'none';
+                                    }
+                                }
+                                //"other" box skin temp
+                                function updateSkinTempOther() {
+                                    const stOtherButton = document.getElementById('chk_skinTemp_other');
+                                    const stOtherText = document.getElementById('skinTemp_other');
+                                    const isOn = stOtherButton.classList.contains('checked');
+                                    if (isOn) {
+                                        stOtherText.style.display = 'inline-block';
+                                    } else {
+                                        stOtherText.value = '';
+                                        stOtherText.style.display = 'none';
+                                    }
+                                }
+                                //"other" box sensitivity
+                                function updateSensitivityOther() {
+                                    const snOtherButton = document.getElementById('chk_sensitivity_other');
+                                    const snOtherText = document.getElementById('sensitivity_other');
+                                    const isOn = snOtherButton.classList.contains('checked');
+                                    if (isOn) {
+                                        snOtherText.style.display = 'inline-block';
+                                    } else {
+                                        snOtherText.value = '';
+                                        snOtherText.style.display = 'none';
+                                    }
+                                }
+
+                                updateNervousSystemOther();
+                                updatePainTypeOther();
+                                updateSkinTempOther();
+                                updateSensitivityOther();
+
+                            </script>
+
+
+                            <script>
+                                //data output
+                                function getFullEntryCsvRow() {
+                                    const dateMM = document.getElementById('date_mm').value;
+                                    const dateDD = document.getElementById('date_dd').value;
+                                    const dateYYYY = document.getElementById('date_yyyy').value;
+                                    const fullDate = `${dateMM}-${dateDD}-${dateYYYY}`;
+                                    // or mm/dd/yyyy, whatever you want
+
+
+                                    const weatherType = document.getElementById('weatherType').value;
+                                    const tempHigh = document.getElementById('weatherHigh').value;
+                                    const tempLow = document.getElementById('weatherLow').value;
+                                    const humidity = document.getElementById('weatherHumidity').value;
+                                    const barometricPressure = document.getElementById('weatherBP').value
+
+                                    const readinessScore = document.getElementById('readinessScore').value;
+                                    const activityHigh = document.getElementById('activityHigh').value;
+                                    const activityLow = document.getElementById('activityLow').value;
+                                    const totalBurn = document.getElementById('totalBurn').value;
+                                    const totalSteps = document.getElementById('activitySteps').value;
+
+                                    const nevroProgram = document.getElementById('nevroProgram').value;
+                                    const nevroLevel = document.getElementById('nevroLevel').value;
+
+
+
+                                    //sleepStress
+                                    const stressLevelCheckedButtons = document.querySelectorAll('#sleepStress_stressLevel_scale .checked');
+                                    let stressLevelValue = '';
+                                    if (stressLevelCheckedButtons.length > 0) {
+                                        const laststressLevelChecked = stressLevelCheckedButtons[stressLevelCheckedButtons.length - 1];
+                                        stressLevelValue = laststressLevelChecked.getAttribute('data-value');
                                     }
 
-                                    document.getElementById('submitEntryBtn').addEventListener('click', handleSubmitEntry);
-                                    function handleSubmitEntry() {
-                                        const csvRow = getFullEntryCsvRow(); // later this will include everything, not just weather
-
-                                        const blob = new Blob([csvRow + '\n'], { type: 'text/csv;charset=utf-8;' });
-                                        const url = URL.createObjectURL(blob);
-                                        const link = document.createElement('a');
-                                        link.href = url;
-                                        link.download = 'pain-journal-entry.csv';
-                                        document.body.appendChild(link);
-                                        link.click();
-                                        document.body.removeChild(link);
-                                        URL.revokeObjectURL(url);
+                                    //sleepQuality
+                                    const sleepQualityCheckedButtons = document.querySelectorAll('#sleepStress_sleepQuality_scale .checked');
+                                    let sleepQualityValue = '';
+                                    if (sleepQualityCheckedButtons.length > 0) {
+                                        const lastsleepQualityChecked = sleepQualityCheckedButtons[sleepQualityCheckedButtons.length - 1];
+                                        sleepQualityValue = lastsleepQualityChecked.getAttribute('data-value');
                                     }
 
-                                </script>
-                                </body>
+                                    // Morning pain
+                                    const morningCheckedButtons = document.querySelectorAll('#painLevel_morning_scale .checked');
+                                    let morningPainValue = '';
+                                    if (morningCheckedButtons.length > 0) {
+                                        const lastMorningChecked = morningCheckedButtons[morningCheckedButtons.length - 1];
+                                        morningPainValue = lastMorningChecked.getAttribute('data-value');
+                                    }
+                                    // Midday pain
+                                    const middayCheckedButtons = document.querySelectorAll('#painLevel_midday_scale .checked');
+                                    let middayPainValue = '';
+                                    if (middayCheckedButtons.length > 0) {
+                                        const lastMiddayChecked = middayCheckedButtons[middayCheckedButtons.length - 1];
+                                        middayPainValue = lastMiddayChecked.getAttribute('data-value');
+                                    }
+                                    // Afternoon pain
+                                    const afternoonCheckedButtons = document.querySelectorAll('#painLevel_afternoon_scale .checked');
+                                    let afternoonPainValue = '';
+                                    if (afternoonCheckedButtons.length > 0) {
+                                        const lastafternoonChecked = afternoonCheckedButtons[afternoonCheckedButtons.length - 1];
+                                        afternoonPainValue = lastafternoonChecked.getAttribute('data-value');
+                                    }
+                                    // Evening pain
+                                    const eveningCheckedButtons = document.querySelectorAll('#painLevel_evening_scale .checked');
+                                    let eveningPainValue = '';
+                                    if (eveningCheckedButtons.length > 0) {
+                                        const lasteveningChecked = eveningCheckedButtons[eveningCheckedButtons.length - 1];
+                                        eveningPainValue = lasteveningChecked.getAttribute('data-value');
+                                    }
+
+                                    //mood today
+                                    const moodTodayCheckedButtons = document.querySelectorAll('#emotional_moodToday_scale .checked');
+                                    let moodTodayValue = '';
+                                    if (moodTodayCheckedButtons.length > 0) {
+                                        const lastmoodTodayChecked = moodTodayCheckedButtons[moodTodayCheckedButtons.length - 1];
+                                        moodTodayValue = lastmoodTodayChecked.getAttribute('data-value');
+                                    }
+
+                                    //anxiety
+                                    const anxietyCheckedButtons = document.querySelectorAll('#emotional_anxiety_scale .checked');
+                                    let anxietyValue = '';
+                                    if (anxietyCheckedButtons.length > 0) {
+                                        const lastanxietyChecked = anxietyCheckedButtons[anxietyCheckedButtons.length - 1];
+                                        anxietyValue = lastanxietyChecked.getAttribute('data-value');
+                                    }
+
+                                    //irritability
+                                    const irritabilityCheckedButtons = document.querySelectorAll('#emotional_irritability_scale .checked');
+                                    let irritabilityValue = '';
+                                    if (irritabilityCheckedButtons.length > 0) {
+                                        const lastirritabilityChecked = irritabilityCheckedButtons[irritabilityCheckedButtons.length - 1];
+                                        irritabilityValue = lastirritabilityChecked.getAttribute('data-value');
+                                    }
+
+                                    //standingTolerance
+                                    const standingToleranceCheckedButtons = document.querySelectorAll('#mobility_standingTolerance_scale .checked');
+                                    let standingToleranceValue = '';
+                                    if (standingToleranceCheckedButtons.length > 0) {
+                                        const laststandingToleranceChecked = standingToleranceCheckedButtons[standingToleranceCheckedButtons.length - 1];
+                                        standingToleranceValue = laststandingToleranceChecked.getAttribute('data-value');
+                                    }
+
+                                    //weightBearing
+                                    const weightBearingCheckedButtons = document.querySelectorAll('#mobility_weightBearing_scale .checked');
+                                    let weightBearingValue = '';
+                                    if (weightBearingCheckedButtons.length > 0) {
+                                        const lastweightBearingChecked = weightBearingCheckedButtons[weightBearingCheckedButtons.length - 1];
+                                        weightBearingValue = lastweightBearingChecked.getAttribute('data-value');
+                                    }
+
+                                    // order: weatherType, tempHigh, tempLow, humidity, barometricPressure
+
+                                    function getCheckboxValue(id) {
+                                        const el = document.getElementById(id);
+                                        if (!el) return ""; // safety so it doesn't break submit
+                                        return el.classList.contains('checked') ? "X" : "";
+                                    }
+
+                                    const nervousSystemValues = getnervousSystemValues();
+                                    const painTypeValues = getpainTypeValues();
+                                    const skinTempValues = getskinTempValues();
+                                    const sensitivityValues = getsensitivityValues();
+
+                                    const rowArray = [fullDate, weatherType, tempHigh, tempLow, humidity, barometricPressure,
+                                        getCheckboxValue('chk_workDay_office_am'), getCheckboxValue('chk_workDay_office_pm'), getCheckboxValue('chk_workDay_clinic_am'),
+                                        getCheckboxValue('chk_workDay_clinic_pm'), getCheckboxValue('chk_workDay_clinic_wasAday'), ...nervousSystemValues,
+                                        stressLevelValue, sleepQualityValue, morningPainValue, middayPainValue, afternoonPainValue, eveningPainValue, ...painTypeValues,
+                                        moodTodayValue, anxietyValue, irritabilityValue, getCheckboxValue('chk_emotional_discouraged_yes'), getCheckboxValue('chk_emotional_discouraged_no'),
+                                        standingToleranceValue, weightBearingValue, readinessScore, activityHigh, activityLow, totalBurn, totalSteps,
+                                        getCheckboxValue('chk_metGoals_yes'), getCheckboxValue('chk_metGoals_no'), getCheckboxValue('chk_overdid_it_yes'),
+                                        getCheckboxValue('chk_overdid_it_no'), getCheckboxValue('chk_painMapping_flareToday_yes'), getCheckboxValue('chk_painMapping_flareToday_no'),
+                                        getCheckboxValue('chk_painMapping_flareToday_mild'), getCheckboxValue('chk_painMapping_flareToday_moderate'), getCheckboxValue('chk_painMapping_flareToday_severe'),
+                                        ...skinTempValues, getCheckboxValue('chk_swelling_none'), getCheckboxValue('chk_swelling_mild'), getCheckboxValue('chk_swelling_moderate'),
+                                        getCheckboxValue('chk_swelling_severe'), getCheckboxValue('chk_swelling_pitting_yes'), getCheckboxValue('chk_swelling_pitting_no'), ...sensitivityValues,
+                                        getCheckboxValue('chk_walkingDifficulty_none'), getCheckboxValue('chk_walkingDifficulty_mild'),
+                                        getCheckboxValue('chk_walkingDifficulty_moderate'), getCheckboxValue('chk_walkingDifficulty_severe'), getCheckboxValue('chk_walkingDifficulty_limping_yes'),
+                                        getCheckboxValue('chk_walkingDifficulty_limping_no'), getCheckboxValue('chk_walkingDifficulty_limping_yes'), getCheckboxValue('chk_walkingDifficulty_limping_no'),
+                                        getCheckboxValue('chk_assistedDevice_yes'), getCheckboxValue('chk_assistedDevice_no'), nevroProgram, nevroLevel, getCheckboxValue('chk_nevro_adjusted_yes'),
+                                        getCheckboxValue('chk_nevro_adjusted_no'),];
+
+                                    const csvRow = rowArray
+                                        .map(value => `"${String(value).replace(/"/g, '""')}"`)
+                                        .join(',');
+
+                                    console.log('csvRow:', csvRow);
+                                    return csvRow;
+                                }
+                                function getnervousSystemValues() {
+                                    const ids = [
+                                        'chk_nervousSystem_brainFog',
+                                        'chk_nervousSystem_nausea',
+                                        'chk_nervousSystem_dizziness',
+                                        'chk_nervousSystem_balance',
+                                        'chk_nervousSystem_muscleSpasms',
+                                        'chk_nervousSystem_hebeegebees',
+                                        'chk_nervousSystem_other'
+                                    ];
+                                    return ids.map(id => {
+                                        const btn = document.getElementById(id);
+                                        return btn && btn.classList.contains('checked') ? 'yes' : '';
+                                    });
+                                }
+                                function getpainTypeValues() {
+                                    const ids = [
+                                        'chk_painType_burning',
+                                        'chk_painType_tightening',
+                                        'chk_painType_stabbing',
+                                        'chk_painType_freezing',
+                                        'chk_painType_throbbing',
+                                        'chk_painType_stinging',
+                                        'chk_painType_stiffness',
+                                        'chk_painType_radiating',
+                                        'chk_painType_electric',
+                                        'chk_painType_pinsNeedles',
+                                        'chk_painType_growingPains',
+                                        'chk_painType_breaking',
+                                        'chk_painType_allodynia',
+                                        'chk_painType_crushing',
+                                        'chk_painType_other'
+                                    ];
+                                    return ids.map(id => {
+                                        const btn = document.getElementById(id);
+                                        return btn && btn.classList.contains('checked') ? 'yes' : '';
+                                    });
+                                }
+
+                                function getskinTempValues() {
+                                    const ids = [
+                                        'chk_skinTemp_colder',
+                                        'chk_skinTemp_paleSpots',
+                                        'chk_skinTemp_purplyBlue',
+                                        'chk_skinTemp_warmer',
+                                        'chk_skinTemp_mottled',
+                                        'chk_skinTemp_pinkyOrange',
+                                        'chk_skinTemp_shiny',
+                                        'chk_skinTemp_redness',
+                                        'chk_skinTemp_other',
+                                    ];
+                                    return ids.map(id => {
+                                        const btn = document.getElementById(id);
+                                        return btn && btn.classList.contains('checked') ? 'yes' : '';
+                                    });
+                                }
+
+                                function getsensitivityValues() {
+                                    const ids = [
+                                        'chk_sensitivity_tolerateShoe',
+                                        'chk_sensitivity_tolerateSock',
+                                        'chk_sensitivity_airMovement',
+                                        'chk_sensitivity_bedsheets',
+                                        'chk_sensitivity_coldAir',
+                                        'chk_sensitivity_other',
+                                    ];
+                                    return ids.map(id => {
+                                        const btn = document.getElementById(id);
+                                        return btn && btn.classList.contains('checked') ? 'yes' : '';
+                                    });
+                                }
+
+
+                                document.getElementById('submitEntryBtn').addEventListener('click', handleSubmitEntry);
+                                function handleSubmitEntry() {
+                                    const csvRow = getFullEntryCsvRow(); // later this will include everything, not just weather
+
+                                    const blob = new Blob([csvRow + '\n'], { type: 'text/csv;charset=utf-8;' });
+                                    const url = URL.createObjectURL(blob);
+                                    const link = document.createElement('a');
+                                    link.href = url;
+                                    link.download = 'pain-journal-entry.csv';
+                                    document.body.appendChild(link);
+                                    link.click();
+                                    document.body.removeChild(link);
+                                    URL.revokeObjectURL(url);
+                                }
+
+                            </script>
+                            </body>
 
 </html>
