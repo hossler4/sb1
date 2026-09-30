@@ -81,6 +81,7 @@
 
         .main-wrapper {
             width: 1725px;
+            height: 7200px;
             margin: 0 auto;
         }
 
@@ -196,45 +197,47 @@
 <div class="lbl-condensed-black" style="position: absolute; left: 673px; top: 205px; font-size: 110px;">daily
     log</div>
 <!-- day btn's will go here -->
-<div id="day_selector">
-    <button class="day-btn" data-day="sun" data-default="images/btn_day_sun_default.png"
-        data-pressed="images/btn_day_sun_pressed.png" onclick="selectDay(this, 'day_selector')"
-        style="background-image: url('images/btn_day_sun_default.png'); left: 40px; top: 68px; width: 80px; height: 90px;">
-    </button>
+
+<div id="day_selector_container">
     <div id="day_selector">
-        <button class="day-btn" data-day="mon" data-default="images/btn_day_mon_default.png"
-            data-pressed="images/btn_day_mon_pressed.png" onclick="selectDay(this, 'day_selector')"
-            style="background-image: url('images/btn_day_mon_default.png'); left: 160px; top: 68px; width: 80px; height: 90px;">
+        <button class="day-btn" data-day="sun" data-default="images/btn_day_sun_default.png"
+            data-pressed="images/btn_day_sun_pressed.png" onclick="selectDay(this, 'day_selector')"
+            style="background-image: url('images/btn_day_sun_default.png'); left: 40px; top: 68px; width: 80px; height: 90px;">
         </button>
         <div id="day_selector">
-            <button class="day-btn" data-day="tues" data-default="images/btn_day_tues_default.png"
-                data-pressed="images/btn_day_tues_pressed.png" onclick="selectDay(this, 'day_selector')"
-                style="background-image: url('images/btn_day_tues_default.png'); left: 280px; top: 68px; width: 80px; height: 90px;">
+            <button class="day-btn" data-day="mon" data-default="images/btn_day_mon_default.png"
+                data-pressed="images/btn_day_mon_pressed.png" onclick="selectDay(this, 'day_selector')"
+                style="background-image: url('images/btn_day_mon_default.png'); left: 160px; top: 68px; width: 80px; height: 90px;">
             </button>
             <div id="day_selector">
-                <button class="day-btn" data-day="wed" data-default="images/btn_day_wed_default.png"
-                    data-pressed="images/btn_day_wed_pressed.png" onclick="selectDay(this, 'day_selector')"
-                    style="background-image: url('images/btn_day_wed_default.png'); left: 400px; top: 68px; width: 80px; height: 90px;">
+                <button class="day-btn" data-day="tues" data-default="images/btn_day_tues_default.png"
+                    data-pressed="images/btn_day_tues_pressed.png" onclick="selectDay(this, 'day_selector')"
+                    style="background-image: url('images/btn_day_tues_default.png'); left: 280px; top: 68px; width: 80px; height: 90px;">
                 </button>
                 <div id="day_selector">
-                    <button class="day-btn" data-day="thurs" data-default="images/btn_day_thurs_default.png"
-                        data-pressed="images/btn_day_thurs_pressed.png" onclick="selectDay(this, 'day_selector')"
-                        style="background-image: url('images/btn_day_thurs_default.png'); left: 520px; top: 68px; width: 80px; height: 90px;">
+                    <button class="day-btn" data-day="wed" data-default="images/btn_day_wed_default.png"
+                        data-pressed="images/btn_day_wed_pressed.png" onclick="selectDay(this, 'day_selector')"
+                        style="background-image: url('images/btn_day_wed_default.png'); left: 400px; top: 68px; width: 80px; height: 90px;">
                     </button>
                     <div id="day_selector">
-                        <button class="day-btn" data-day="fri" data-default="images/btn_day_fri_default.png"
-                            data-pressed="images/btn_day_fri_pressed.png" onclick="selectDay(this, 'day_selector')"
-                            style="background-image: url('images/btn_day_fri_default.png'); left: 640px; top: 68px; width: 80px; height: 90px;">
+                        <button class="day-btn" data-day="thurs" data-default="images/btn_day_thurs_default.png"
+                            data-pressed="images/btn_day_thurs_pressed.png" onclick="selectDay(this, 'day_selector')"
+                            style="background-image: url('images/btn_day_thurs_default.png'); left: 520px; top: 68px; width: 80px; height: 90px;">
                         </button>
                         <div id="day_selector">
-                            <button class="day-btn" data-day="sat" data-default="images/btn_day_sat_default.png"
-                                data-pressed="images/btn_day_sat_pressed.png" onclick="selectDay(this, 'day_selector')"
-                                style="background-image: url('images/btn_day_sat_default.png'); left: 760px; top: 68px; width: 80px; height: 90px;">
+                            <button class="day-btn" data-day="fri" data-default="images/btn_day_fri_default.png"
+                                data-pressed="images/btn_day_fri_pressed.png" onclick="selectDay(this, 'day_selector')"
+                                style="background-image: url('images/btn_day_fri_default.png'); left: 640px; top: 68px; width: 80px; height: 90px;">
                             </button>
+                            <div id="day_selector">
+                                <button class="day-btn" data-day="sat" data-default="images/btn_day_sat_default.png"
+                                    data-pressed="images/btn_day_sat_pressed.png"
+                                    onclick="selectDay(this, 'day_selector')"
+                                    style="background-image: url('images/btn_day_sat_default.png'); left: 760px; top: 68px; width: 80px; height: 90px;">
+                                </button>
 
-
+                            </div>
                         </div>
-
 
                         <div id="section_weather">
                             <!-- weather section content will go here -->
@@ -1362,27 +1365,25 @@
                                         no
                                     </div>
 
-
-                                    <input type="text" class="lbl-condensed-black" id="readinessScore" maxlength="2"
+                                    <input type="text" class="lbl-condensed-black" id="readinessScore" maxlength="4"
                                         placeholder="--" style="position: absolute; left: 405px; top: 3345px; width: 70px; height: 30px; 
                                     text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
 
-                                    <input type="text" class="lbl-condensed-black" id="activityHigh" maxlength="2"
+                                    <input type="text" class="lbl-condensed-black" id="activity" maxlength="4"
                                         placeholder="--" style="position: absolute; left: 710px; top: 3345px; width: 70px; height: 30px; 
                                     text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
 
-                                    <input type="text" class="lbl-condensed-black" id="activityLow" maxlength="2"
+                                    <input type="text" class="lbl-condensed-black" id="goals" maxlength="4"
                                         placeholder="--" style="position: absolute; left: 860px; top: 3345px; width: 70px; height: 30px; 
                                     text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
 
-                                    <input type="text" class="lbl-condensed-black" id="totalBurn" maxlength="2"
+                                    <input type="text" class="lbl-condensed-black" id="totalBurn" maxlength="4"
                                         placeholder="--" style="position: absolute; left: 1215px; top: 3345px; width: 70px; height: 30px; 
                                     text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
 
-                                    <input type="text" class="lbl-condensed-black" id="activitySteps" maxlength="2"
+                                    <input type="text" class="lbl-condensed-black" id="activitySteps" maxlength="4"
                                         placeholder="--" style="position: absolute; left: 1470px; top: 3345px; width: 70px; height: 30px; 
                                     text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
-
 
                                     <button id="chk_metGoals_yes" class="checkbox"
                                         data-default="images/chk_activity_metGoals_yes_default.png"
@@ -1390,6 +1391,7 @@
                                         onclick="toggleCheckbox(this)"
                                         style="background-image: url('images/chk_activity_metGoals_yes_default.png'); left: 405px; top: 3438px;">
                                     </button>
+
                                     <button id="chk_metGoals_no" class="checkbox"
                                         data-default="images/chk_activity_metGoals_no_default.png"
                                         data-pressed="images/chk_activity_metGoals_no_pressed.png"
@@ -1397,14 +1399,13 @@
                                         style="background-image: url('images/chk_activity_metGoals_no_default.png'); left: 563px; top: 3438px;">
                                     </button>
 
-
-
                                     <button id="chk_overdid_it_yes" class="checkbox"
                                         data-default="images/chk_activity_overdidit_yes_default.png"
                                         data-pressed="images/chk_activity_overdidit_yes_pressed.png"
                                         onclick="toggleCheckbox(this)"
                                         style="background-image: url('images/chk_activity_overdidit_yes_default.png'); left: 970px; top: 3438px;">
                                     </button>
+
                                     <button id="chk_overdid_it_no" class="checkbox"
                                         data-default="images/chk_activity_overdidit_no_default.png"
                                         data-pressed="images/chk_activity_overdidit_no_pressed.png"
@@ -1443,7 +1444,6 @@
                                             style="position: absolute; left: 466px; top: 3683px; font-size: 51px;">
                                             yes
                                         </div>
-
                                         <div id="flareToday">
                                             <button id="chk_painMapping_flareToday_yes" class="checkbox"
                                                 data-default="images/chk_painMapping_flareToday_yes_default.png"
@@ -1639,18 +1639,15 @@
         <div class="lbl-condensed-black" style="position: absolute; left: 40px; top: 4865px; font-size: 55px;">
             skin and temperature
         </div>
-
         <div class="lbl-regular" style="position: absolute; left: 185px; top: 4995px; font-size: 42px;">
             colder than left side
         </div>
-
         <div class="lbl-regular" style="position: absolute; left: 185px; top: 5096px; font-size: 42px;">
             pale spots/areas
         </div>
         <div class="lbl-regular" style="position: absolute; left: 185px; top: 5197px; font-size: 42px;">
             purple/blue tone
         </div>
-
         <div class="lbl-regular" style="position: absolute; left: 625px; top: 4995px; font-size: 42px;">
             warmer than left side
         </div>
@@ -1674,10 +1671,12 @@
             data-pressed="images/chk_skinTemp_colder_pressed.png" onclick="toggleCheckbox(this)"
             style="background-image: url('images/chk_skinTemp_colder_default.png'); left: 121px; top: 4995px;">
         </button>
+
         <button id="chk_skinTemp_paleSpots" class="checkbox" data-default="images/chk_skinTemp_paleSpots_default.png"
             data-pressed="images/chk_skinTemp_paleSpots_pressed.png" onclick="toggleCheckbox(this)"
             style="background-image: url('images/chk_skinTemp_paleSpots_default.png'); left: 121px; top: 5096px;">
         </button>
+
         <button id="chk_skinTemp_purplyBlue" class="checkbox" data-default="images/chk_skinTemp_purplyBlue_default.png"
             data-pressed="images/chk_skinTemp_purplyBlue_pressed.png" onclick="toggleCheckbox(this)"
             style="background-image: url('images/chk_skinTemp_purplyBlue_default.png'); left: 121px; top: 5197px;">
@@ -1687,10 +1686,12 @@
             data-pressed="images/chk_skinTemp_warmer_pressed.png" onclick="toggleCheckbox(this)"
             style="background-image: url('images/chk_skinTemp_warmer_default.png'); left: 561px; top: 4995px;">
         </button>
+
         <button id="chk_skinTemp_mottled" class="checkbox" data-default="images/chk_skinTemp_mottled_default.png"
             data-pressed="images/chk_skinTemp_mottled_pressed.png" onclick="toggleCheckbox(this)"
             style="background-image: url('images/chk_skinTemp_mottled_default.png'); left: 561px; top: 5096px;">
         </button>
+
         <button id="chk_skinTemp_pinkyOrange" class="checkbox"
             data-default="images/chk_skinTemp_pinkyOrange_default.png"
             data-pressed="images/chk_skinTemp_pinkyOrange_pressed.png" onclick="toggleCheckbox(this)"
@@ -1701,14 +1702,17 @@
             data-pressed="images/chk_skinTemp_shiny_pressed.png" onclick="toggleCheckbox(this)"
             style="background-image: url('images/chk_skinTemp_shiny_default.png'); left: 1060px; top: 4995px;">
         </button>
+
         <button id="chk_skinTemp_redness" class="checkbox" data-default="images/chk_skinTemp_redness_default.png"
             data-pressed="images/chk_skinTemp_redness_pressed.png" onclick="toggleCheckbox(this)"
             style="background-image: url('images/chk_skinTemp_redness_default.png'); left: 1060px; top: 5096px;">
         </button>
+
         <button id="chk_skinTemp_other" class="checkbox" data-default="images/chk_skinTemp_other_default.png"
             data-pressed="images/chk_skinTemp_other_pressed.png" onclick="toggleCheckbox(this)"
             style="background-image: url('images/chk_skinTemp_other_default.png'); left: 1060px; top: 5197px;">
         </button>
+
         <input type="text" class="lbl-regular" id="skinTemp_other" maxlength="100" placeholder="other" style="position: absolute; left: 1060px; top: 5260px; width: 270px; height: 80px; text-align: center; 
             border: 2px solid #333; border-radius: 4px; font-size: 35px; display: none;">
 
@@ -1741,31 +1745,32 @@
                 yes
             </div>
 
-
             <button id="chk_swelling_none" class="checkbox" data-default="images/chk_swelling_none_default.png"
                 data-pressed="images/chk_swelling_none_pressed.png" onclick="toggleCheckbox(this)"
                 style="background-image: url('images/chk_swelling_none_default.png'); left: 121px; top: 5445px;">
             </button>
+
             <button id="chk_swelling_mild" class="checkbox" data-default="images/chk_swelling_mild_default.png"
                 data-pressed="images/chk_swelling_mild_pressed.png" onclick="toggleCheckbox(this)"
                 style="background-image: url('images/chk_swelling_mild_default.png'); left: 320px; top: 5445px;">
             </button>
+
             <button id="chk_swelling_moderate" class="checkbox" data-default="images/chk_swelling_moderate_default.png"
                 data-pressed="images/chk_swelling_moderate_pressed.png" onclick="toggleCheckbox(this)"
                 style="background-image: url('images/chk_swelling_moderate_default.png'); left: 498px; top: 5445px;">
             </button>
+
             <button id="chk_swelling_severe" class="checkbox" data-default="images/chk_swelling_severe_default.png"
                 data-pressed="images/chk_swelling_severe_pressed.png" onclick="toggleCheckbox(this)"
                 style="background-image: url('images/chk_swelling_severe_default.png'); left: 752px; top: 5445px;">
             </button>
-
-
 
             <button id="chk_swelling_pitting_yes" class="checkbox"
                 data-default="images/chk_swelling_pitting_yes_default.png"
                 data-pressed="images/chk_swelling_pitting_yes_pressed.png" onclick="toggleCheckbox(this)"
                 style="background-image: url('images/chk_swelling_pitting_yes_default.png'); left: 1166px; top: 5445px;">
             </button>
+
             <button id="chk_swelling_pitting_no" class="checkbox"
                 data-default="images/chk_swelling_pitting_no_default.png"
                 data-pressed="images/chk_swelling_pitting_no_pressed.png" onclick="toggleCheckbox(this)"
@@ -2133,6 +2138,13 @@
                                 style="background-image: url('images/chk_nevro_adjusted_no_default.png'); left: 1130px; top: 6760px;">
                             </button>
 
+                            <button id="submitEntryBtn" class="checkbox"
+                                data-default="images/submitEntryBtn_default.png"
+                                data-pressed="images/submitEntryBtn_pressed.png" onclick="toggleCheckbox(this)"
+                                style="background-image: url('images/submitEntryBtn_default.png'); left: 1480px; top: 6750px; width: 118px; height: 73px;">
+                            </button>
+
+
 
                             <button type="button" id="submitEntryBtn">Submit entry</button>
 
@@ -2177,8 +2189,10 @@
                                     allButtons.forEach(button => {
                                         if (button === clickedButton) {
                                             button.style.backgroundImage = `url('${button.dataset.pressed}')`;
+                                            button.classList.add('checked');
                                         } else {
                                             button.style.backgroundImage = `url('${button.dataset.default}')`;
+                                            button.classList.remove('checked');
                                         }
                                     });
                                 }
@@ -2307,8 +2321,8 @@
                                     const barometricPressure = document.getElementById('weatherBP').value
 
                                     const readinessScore = document.getElementById('readinessScore').value;
-                                    const activityHigh = document.getElementById('activityHigh').value;
-                                    const activityLow = document.getElementById('activityLow').value;
+                                    const activity = document.getElementById('activity').value;
+                                    const goals = document.getElementById('goals').value;
                                     const totalBurn = document.getElementById('totalBurn').value;
                                     const totalSteps = document.getElementById('activitySteps').value;
 
@@ -2316,6 +2330,12 @@
                                     const nevroLevel = document.getElementById('nevroLevel').value;
 
 
+                                    //day_selector
+                                    const dayCheckedButtons = document.querySelectorAll('#day_selector_container .day-btn.checked');
+                                    let dayValue = '';
+                                    if (dayCheckedButtons.length > 0) {
+                                        dayValue = dayCheckedButtons[0].getAttribute('data-day');
+                                    }
 
                                     //sleepStress
                                     const stressLevelCheckedButtons = document.querySelectorAll('#sleepStress_stressLevel_scale .checked');
@@ -2415,21 +2435,21 @@
                                     const skinTempValues = getskinTempValues();
                                     const sensitivityValues = getsensitivityValues();
 
-                                    const rowArray = [fullDate, weatherType, tempHigh, tempLow, humidity, barometricPressure,
+                                    const rowArray = [fullDate, dayValue, weatherType, tempHigh, tempLow, humidity, barometricPressure,
                                         getCheckboxValue('chk_workDay_office_am'), getCheckboxValue('chk_workDay_office_pm'), getCheckboxValue('chk_workDay_clinic_am'),
                                         getCheckboxValue('chk_workDay_clinic_pm'), getCheckboxValue('chk_workDay_clinic_wasAday'), stressLevelValue, sleepQualityValue, ...nervousSystemValues,
-                                        morningPainValue, middayPainValue, afternoonPainValue, eveningPainValue, ...painTypeValues,
+                                        document.getElementById('nervousSystem_other')?.value || '',
+                                        morningPainValue, middayPainValue, afternoonPainValue, eveningPainValue, ...painTypeValues, document.getElementById('painType_other')?.value || '',
                                         moodTodayValue, anxietyValue, irritabilityValue, getCheckboxValue('chk_emotional_discouraged_yes'), getCheckboxValue('chk_emotional_discouraged_no'),
-                                        readinessScore, activityHigh, activityLow, totalBurn, totalSteps,
+                                        readinessScore, activity, goals, totalBurn, totalSteps,
                                         getCheckboxValue('chk_metGoals_yes'), getCheckboxValue('chk_metGoals_no'), getCheckboxValue('chk_overdid_it_yes'),
                                         getCheckboxValue('chk_overdid_it_no'), getCheckboxValue('chk_painMapping_flareToday_yes'), getCheckboxValue('chk_painMapping_flareToday_no'),
                                         getCheckboxValue('chk_painMapping_flareToday_mild'), getCheckboxValue('chk_painMapping_flareToday_moderate'), getCheckboxValue('chk_painMapping_flareToday_severe'),
-                                        ...skinTempValues, getCheckboxValue('chk_swelling_none'), getCheckboxValue('chk_swelling_mild'), getCheckboxValue('chk_swelling_moderate'),
-                                        getCheckboxValue('chk_swelling_severe'), getCheckboxValue('chk_swelling_pitting_yes'), getCheckboxValue('chk_swelling_pitting_no'), ...sensitivityValues,
+                                        ...skinTempValues, document.getElementById('skinTemp_other')?.value || '', getCheckboxValue('chk_swelling_none'), getCheckboxValue('chk_swelling_mild'), getCheckboxValue('chk_swelling_moderate'),
+                                        getCheckboxValue('chk_swelling_severe'), getCheckboxValue('chk_swelling_pitting_yes'), getCheckboxValue('chk_swelling_pitting_no'), ...sensitivityValues, document.getElementById('sensityi_other')?.value || '',
                                         standingToleranceValue, weightBearingValue, getCheckboxValue('chk_walkingDifficulty_none'), getCheckboxValue('chk_walkingDifficulty_mild'),
                                         getCheckboxValue('chk_walkingDifficulty_moderate'), getCheckboxValue('chk_walkingDifficulty_severe'), getCheckboxValue('chk_walkingDifficulty_limping_yes'),
-                                        getCheckboxValue('chk_walkingDifficulty_limping_no'), getCheckboxValue('chk_walkingDifficulty_limping_yes'), getCheckboxValue('chk_walkingDifficulty_limping_no'),
-                                        getCheckboxValue('chk_assistedDevice_yes'), getCheckboxValue('chk_assistedDevice_no'), nevroProgram, nevroLevel, getCheckboxValue('chk_nevro_adjusted_yes'),
+                                        getCheckboxValue('chk_walkingDifficulty_limping_no'), getCheckboxValue('chk_assistedDevice_yes'), getCheckboxValue('chk_assistedDevice_no'), nevroProgram, nevroLevel, getCheckboxValue('chk_nevro_adjusted_yes'),
                                         getCheckboxValue('chk_nevro_adjusted_no'),];
 
                                     const csvRow = rowArray
@@ -2451,7 +2471,7 @@
                                     ];
                                     return ids.map(id => {
                                         const btn = document.getElementById(id);
-                                        return btn && btn.classList.contains('checked') ? 'yes' : '';
+                                        return btn && btn.classList.contains('checked') ? 'X' : '';
                                     });
                                 }
                                 function getpainTypeValues() {
@@ -2474,7 +2494,7 @@
                                     ];
                                     return ids.map(id => {
                                         const btn = document.getElementById(id);
-                                        return btn && btn.classList.contains('checked') ? 'yes' : '';
+                                        return btn && btn.classList.contains('checked') ? 'X' : '';
                                     });
                                 }
 
@@ -2492,7 +2512,7 @@
                                     ];
                                     return ids.map(id => {
                                         const btn = document.getElementById(id);
-                                        return btn && btn.classList.contains('checked') ? 'yes' : '';
+                                        return btn && btn.classList.contains('checked') ? 'X' : '';
                                     });
                                 }
 
@@ -2507,7 +2527,7 @@
                                     ];
                                     return ids.map(id => {
                                         const btn = document.getElementById(id);
-                                        return btn && btn.classList.contains('checked') ? 'yes' : '';
+                                        return btn && btn.classList.contains('checked') ? 'X' : '';
                                     });
                                 }
 
@@ -2525,7 +2545,44 @@
                                     link.click();
                                     document.body.removeChild(link);
                                     URL.revokeObjectURL(url);
+                                    resetForm();
                                 }
+
+                                function resetForm() {
+                                    // clear text and number inputs
+                                    document.querySelectorAll('input[type="text"], input[type="number"]').forEach(input => {
+                                        input.value = '';
+                                    });
+
+                                    // reset dropdowns to first option
+                                    document.querySelectorAll('select').forEach(select => {
+                                        select.selectedIndex = 0;
+                                    });
+
+
+                                    // reset pain-type buttons (class="checkbox")
+                                    document.querySelectorAll('button.checkbox.checked').forEach(btn => {
+                                        btn.classList.remove('checked');
+                                        btn.style.backgroundImage = `url('${btn.dataset.default}')`;
+                                    });
+
+
+                                    // reset scale buttons (class="scale-btn")
+                                    document.querySelectorAll('button.scale-btn.checked').forEach(btn => {
+                                        btn.classList.remove('checked');
+                                        btn.style.backgroundImage = `url('${btn.dataset.static}')`;
+                                    });
+
+
+                                    // uncheck regular checkboxes
+                                    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                                        checkbox.checked = false;
+                                    });
+                                }
+
+
+
+
 
                             </script>
                             </body>
