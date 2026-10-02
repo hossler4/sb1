@@ -33,6 +33,7 @@
             -webkit-appearance: none;
         }
 
+
         .lbl-condensed-black {
             font-family: "helvetica-neue-lt-pro-cond", sans-serif;
             font-weight: 900;
@@ -180,6 +181,15 @@
     </div>
 
 </body>
+
+
+
+
+
+
+
+
+
 <div class="lbl-condensed-black" style="position: absolute; left: 975px; top: 83px; font-size: 54px;">
     date</div>
 <div class="lbl-condensed-black" style="position: absolute; left: 1200px; top: 87px; font-size: 47px;">
@@ -200,37 +210,38 @@
 
 <div id="day_selector_container">
     <div id="day_selector">
-        <button class="day-btn" data-day="sun" data-default="images/btn_day_sun_default.png"
+        <button class="day-btn" data-day="sunday" data-default="images/btn_day_sun_default.png"
             data-pressed="images/btn_day_sun_pressed.png" onclick="selectDay(this, 'day_selector')"
             style="background-image: url('images/btn_day_sun_default.png'); left: 40px; top: 68px; width: 80px; height: 90px;">
         </button>
         <div id="day_selector">
-            <button class="day-btn" data-day="mon" data-default="images/btn_day_mon_default.png"
+            <button class="day-btn" data-day="monday" data-default="images/btn_day_mon_default.png"
                 data-pressed="images/btn_day_mon_pressed.png" onclick="selectDay(this, 'day_selector')"
                 style="background-image: url('images/btn_day_mon_default.png'); left: 160px; top: 68px; width: 80px; height: 90px;">
             </button>
             <div id="day_selector">
-                <button class="day-btn" data-day="tues" data-default="images/btn_day_tues_default.png"
+                <button class="day-btn" data-day="tuesday" data-default="images/btn_day_tues_default.png"
                     data-pressed="images/btn_day_tues_pressed.png" onclick="selectDay(this, 'day_selector')"
                     style="background-image: url('images/btn_day_tues_default.png'); left: 280px; top: 68px; width: 80px; height: 90px;">
                 </button>
                 <div id="day_selector">
-                    <button class="day-btn" data-day="wed" data-default="images/btn_day_wed_default.png"
+                    <button class="day-btn" data-day="wednesday" data-default="images/btn_day_wed_default.png"
                         data-pressed="images/btn_day_wed_pressed.png" onclick="selectDay(this, 'day_selector')"
                         style="background-image: url('images/btn_day_wed_default.png'); left: 400px; top: 68px; width: 80px; height: 90px;">
                     </button>
                     <div id="day_selector">
-                        <button class="day-btn" data-day="thurs" data-default="images/btn_day_thurs_default.png"
+                        <button class="day-btn" data-day="thursday" data-default="images/btn_day_thurs_default.png"
                             data-pressed="images/btn_day_thurs_pressed.png" onclick="selectDay(this, 'day_selector')"
                             style="background-image: url('images/btn_day_thurs_default.png'); left: 520px; top: 68px; width: 80px; height: 90px;">
                         </button>
                         <div id="day_selector">
-                            <button class="day-btn" data-day="fri" data-default="images/btn_day_fri_default.png"
+                            <button class="day-btn" data-day="friday" data-default="images/btn_day_fri_default.png"
                                 data-pressed="images/btn_day_fri_pressed.png" onclick="selectDay(this, 'day_selector')"
                                 style="background-image: url('images/btn_day_fri_default.png'); left: 640px; top: 68px; width: 80px; height: 90px;">
                             </button>
                             <div id="day_selector">
-                                <button class="day-btn" data-day="sat" data-default="images/btn_day_sat_default.png"
+                                <button class="day-btn" data-day="saturday"
+                                    data-default="images/btn_day_sat_default.png"
                                     data-pressed="images/btn_day_sat_pressed.png"
                                     onclick="selectDay(this, 'day_selector')"
                                     style="background-image: url('images/btn_day_sat_default.png'); left: 760px; top: 68px; width: 80px; height: 90px;">
@@ -238,6 +249,61 @@
 
                             </div>
                         </div>
+
+                        <!--nav-tabs-->
+
+                        <button id="tab_notes" data-default="images/nav_tab_notes_default.png"
+                            data-pressed="images/nav_tab_notes_pressed.png" style="position: absolute; left: 1633px; top: 1847px; width: 80px; height: 220px;
+                            background-size: contain; background-repeat: no-repeat; border: none; background-color:
+                            transparent;" onclick="switchTab('notes')">
+                        </button>
+
+                        <button id="tab_flare" data-default="images/nav_tab_flare_default.png"
+                            data-pressed="images/nav_tab_flare_pressed.png" style="position: absolute; left: 1633px; top: 1667px; width: 80px; height: 220px;
+                            background-size: contain; background-repeat: no-repeat; border: none; background-color:
+                            transparent;" onclick="switchTab('flare')">
+                        </button>
+
+                        <button id="tab_visits" data-default="images/nav_tab_visits_default.png"
+                            data-pressed="images/nav_tab_visits_pressed.png" style="position: absolute; left: 1633px; top: 1487px; width: 80px; height: 220px;
+                            background-size: contain; background-repeat: no-repeat; border: none; background-color:
+                            transparent;" onclick="switchTab('visits')">
+                        </button>
+
+                        <button id="tab_meds" data-default="images/nav_tab_meds_default.png"
+                            data-pressed="images/nav_tab_meds_pressed.png" style="position: absolute; left: 1633px; top: 1307px; width: 80px; height: 220px;
+                            background-size: contain; background-repeat: no-repeat; border: none; background-color:
+                            transparent;" onclick="switchTab('meds')">
+                        </button>
+
+                        <button id="tab_monthly" data-default="images/nav_tab_monthly_default.png"
+                            data-pressed="images/nav_tab_monthly_pressed.png" style="position: absolute; left: 1633px; top: 1127px; width: 80px; height: 220px;
+                            background-size: contain; background-repeat: no-repeat; border: none; background-color:
+                            transparent;" onclick="switchTab('monthly')">
+                        </button>
+
+                        <button id="tab_weekly" data-default="images/nav_tab_weekly_default.png"
+                            data-pressed="images/nav_tab_weekly_pressed.png" style="position: absolute; left: 1633px; top: 947px; width: 80px; height: 220px;
+                            background-size: contain; background-repeat: no-repeat; border: none; background-color:
+                            transparent;" onclick="switchTab('weekly')">
+                        </button>
+
+                        <button id="tab_daily" data-default="images/nav_tab_daily_default.png"
+                            data-pressed="images/nav_tab_daily_pressed.png" style="position: absolute; left: 1633px; top: 777px; width: 80px; height: 220px;
+                            background-size: contain; background-repeat: no-repeat; border: none; background-color:
+                            transparent;" onclick="switchTab('daily')">
+                        </button>
+
+                        <button id="tab_home" data-default="images/nav_tab_home_default.png"
+                            data-pressed="images/nav_tab_home_pressed.png" style="position: absolute; left: 1633px; top: 607px; width: 80px; height: 220px;
+                            background-size: contain; background-repeat: no-repeat; border: none; background-color:
+                            transparent;" onclick="switchTab('home')">
+                        </button>
+
+
+
+
+
 
                         <div id="section_weather">
                             <!-- weather section content will go here -->
@@ -281,7 +347,6 @@
                                 <option value="stormy">stormy</option>
                             </select>
                         </div>
-
 
                         <div id="section_workDay">
                             <div class="lbl-condensed-black"
@@ -2145,7 +2210,6 @@
                             </button>
 
 
-
                             <button type="button" id="submitEntryBtn">Submit entry</button>
 
                             <script>
@@ -2181,6 +2245,26 @@
                                         }
                                     });
                                 }
+                                function initTabs() {
+                                    let tabs = document.querySelectorAll('button[id^="tab_"]');
+                                    for (let i = 0; i < tabs.length; i++) {
+                                        tabs[i].style.backgroundImage = "url(" + tabs[i].dataset.default + ")";
+                                        tabs[i].style.backgroundRepeat = "no-repeat";
+                                        tabs[i].style.backgroundSize = "contain";
+                                        tabs[i].style.backgroundColor = "transparent";
+                                        tabs[i].style.border = "none";
+                                    }
+                                }
+                                initTabs();
+
+                                function switchTab(tabName) {
+                                    let tabs = document.querySelectorAll('button[id^="tab_"]');
+                                    for (let i = 0; i < tabs.length; i++) {
+                                        tabs[i].style.backgroundImage = "url(" + tabs[i].dataset.default + ")";
+                                    }
+                                    let activeTab = document.getElementById('tab_' + tabName);
+                                    activeTab.style.backgroundImage = "url(" + activeTab.dataset.pressed + ")";
+                                }
 
                                 //day selector
                                 function selectDay(clickedButton, groupName) {
@@ -2197,7 +2281,7 @@
                                     });
                                 }
                                 function setTodayAsDefault() {
-                                    const days = ['sun', 'mon', 'tues', 'wed', 'thurs', 'fri', 'sat'];
+                                    const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
                                     const todayIndex = new Date().getDay(); // 0 = Sunday, 6 = Saturday
                                     const todayName = days[todayIndex];
                                     const todayButton = document.querySelector(`.day-btn[data-day="${todayName}"]`);
