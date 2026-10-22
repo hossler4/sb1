@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <title>Pain Journal - Daily</title>
     <link rel="stylesheet" href="https://use.typekit.net/blb3phm.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -146,10 +147,8 @@
             top: 6680px;
         }
 
-
-
-        .abs {
-            position: absolute;
+        .scaled {
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -331,11 +330,11 @@
                                 style="position: absolute; left: 1435px; top: 378px; font-size: 45px;">
                                 inHg</div>
 
-                            <input type="text" class="lbl-regular" id="weatherHigh" maxlength="3" placeholder="HIGH"
+                            <input type="text" class="lbl-regular" id="weatherHigh" maxlength="4" placeholder="HIGH"
                                 style="position: absolute; left: 675px; top: 385px; width: 70px; height: 30px; text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
-                            <input type="text" class="lbl-regular" id="weatherLow" maxlength="3" placeholder="LOW"
+                            <input type="text" class="lbl-regular" id="weatherLow" maxlength="4" placeholder="LOW"
                                 style="position: absolute; left: 819px; top: 385px; width: 70px; height: 30px; text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
-                            <input type="text" class="lbl-regular" id="weatherHumidity" maxlength="2" placeholder="RH"
+                            <input type="text" class="lbl-regular" id="weatherHumidity" maxlength="4" placeholder="RH"
                                 style="position: absolute; left: 1140px; top: 385px; width: 65px; height: 30px; text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
                             <input type="text" class="lbl-regular" id="weatherBP" maxlength="5" placeholder="BP"
                                 style="position: absolute; left: 1312px; top: 385px; width: 82px; height: 30px; text-align: center; border: 2px solid #333; border-radius: 4px; font-size: 37px;">
@@ -1529,7 +1528,6 @@
                                             </button>
                                         </div>
 
-
                                         <button id="chk_painMapping_flareToday_mild" class="checkbox"
                                             data-default="images/chk_painMapping_flareToday_mild_default.png"
                                             data-pressed="images/chk_painMapping_flareToday_mild_pressed.png"
@@ -1550,159 +1548,261 @@
                                         </button>
 
 
-                                        <img class="abs" src="images/region_anteriorFoot.png"
-                                            style="left: 1031px; top: 3839px; width: 292px; height: 646px;">
 
-                                        <img class="abs" src="images/region_lateralFoot.png"
-                                            style="left: 942px; top: 4123px; width: 883px; height: 589px;">
 
-                                        <img class="abs" src="images/region_medialFoot.png"
-                                            style="left: 482px; top: 4390px; width: 635px; height: 473px;">
+                                        <img class="footDiagram" src="images/region_anteriorFoot.png"
+                                            style="position:absolute; left: 1031px; top: 3839px; width: 292px; height: 646px;">
+                                        <svg width="292" height="646" viewBox="0 0 292 646"
+                                            style="position:absolute;left: 1031px; top: 3839px;">
 
-                                        <img class="abs" src="images/region_plantarFoot.png"
-                                            style="left: 689px; top: 3846px; width: 290px; height: 646px;">
+                                            <circle cx="98.00" cy="8.61" r="5" fill="transparent" stroke="red"
+                                                stroke-width="1px" onclick='fillZone(this)' />
+                                            <circle cx="88.22" cy="13.61" r="5" fill="transparent" stroke="red"
+                                                stroke-width="1px" onclick='fillZone(this)' />
+                                            <circle cx="108.68" cy="10.93" r="5" fill="transparent" stroke="red"
+                                                stroke-width="1px" onclick='fillZone(this)' />
+                                            <circle cx="27.89" cy="29.23" r="5" fill="transparent" stroke="red"
+                                                stroke-width="1px" onclick='fillZone(this)' />
+                                            <circle cx="41.80" cy="25.07" r="5" fill="transparent" stroke="red"
+                                                stroke-width="1px" onclick='fillZone(this)' />
 
-                                        <img class="abs" src="images/painMapping_legend_01_default.png"
-                                            style="left: 80px; top: 3798px; width: 60px; height: 70px;">
 
-                                        <img class="abs" src="images/painMapping_legend_02_default.png"
-                                            style="left: 80px; top: 3888px; width: 60px; height: 70px;">
 
-                                        <img class="abs" src="images/painMapping_legend_03_default.png"
-                                            style="left: 80px; top: 3977px; width: 60px; height: 70px;">
 
-                                        <img class="abs" src="images/painMapping_legend_04_default.png"
-                                            style="left: 80px; top: 4068px; width: 60px; height: 70px;">
 
-                                        <img class="abs" src="images/painMapping_legend_05_default.png"
-                                            style="left: 80px; top: 4158px; width: 60px; height: 70px;">
 
-                                        <img class="abs" src="images/painMapping_legend_06_default.png"
-                                            style="left: 80px; top: 4247px; width: 60px; height: 70px;">
 
-                                        <img class="abs" src="images/painMapping_legend_07_default.png"
-                                            style="left: 80px; top: 4337px; width: 60px; height: 70px;">
 
-                                        <img class="abs" src="images/painMapping_legend_08_default.png"
-                                            style="left: 80px; top: 4428px; width: 60px; height: 70px;">
 
-                                        <img class="abs" src="images/painMapping_legend_09_default.png"
-                                            style="left: 80px; top: 4517px; width: 60px; height: 70px;">
+
+
+
+
+
+
+
+
+
+
+
+                                        </svg>
+
+
+
+
+                                        <img class="footDiagram" src="images/region_lateralFoot.png"
+                                            style="position:absolute; left: 942px; top: 4123px; width: 883px; height: 589px;">
+
+                                        <img class="footDiagram" src="images/region_medialFoot.png"
+                                            style="position:absolute; left: 482px; top: 4390px; width: 635px; height: 473px;">
+
+                                        <img class="footDiagram" src="images/region_plantarFoot.png"
+                                            style="position:absolute; left: 689px; top: 3846px; width: 290px; height: 646px;">
+
+                                        <img class="skittle" id=skittle1 src="images/painMapping_legend_01_default.png"
+                                            data-color="#F2624A" onclick="selectSkittle(this)"
+                                            style="position:absolute; left: 80px; top: 3798px; width: 60px; height: 70px;">
+
+                                        <img class="skittle" id=skittle2 src="images/painMapping_legend_02_default.png"
+                                            data-color="#547C8C" onclick="selectSkittle(this)"
+                                            style="position:absolute; left: 80px; top: 3888px; width: 60px; height: 70px;">
+
+                                        <img class="skittle" id=skittle3 src="images/painMapping_legend_03_default.png"
+                                            data-color="#8D62B8" onclick="selectSkittle(this)"
+                                            style="position:absolute; left: 80px; top: 3977px; width: 60px; height: 70px;">
+
+                                        <img class="skittle" id=skittle4 src="images/painMapping_legend_04_default.png"
+                                            data-color="#E8A969" onclick="selectSkittle(this)"
+                                            style="position:absolute; left: 80px; top: 4068px; width: 60px; height: 70px;">
+
+                                        <img class="skittle" id=skittle5 src="images/painMapping_legend_05_default.png"
+                                            data-color="#8CC05E" onclick="selectSkittle(this)"
+                                            style="position:absolute; left: 80px; top: 4158px; width: 60px; height: 70px;">
+
+                                        <img class="skittle" id=skittle6 src="images/painMapping_legend_06_default.png"
+                                            data-color="#F2C76B" onclick="selectSkittle(this)"
+                                            style="position:absolute; left: 80px; top: 4247px; width: 60px; height: 70px;">
+
+                                        <img class="skittle" id=skittle7 src="images/painMapping_legend_07_default.png"
+                                            data-color="#F28A5C" onclick="selectSkittle(this)"
+                                            style="position:absolute; left: 80px; top: 4337px; width: 60px; height: 70px;">
+
+                                        <img class="skittle" id=skittle8 src="images/painMapping_legend_08_default.png"
+                                            data-color="#F2A2A2" onclick="selectSkittle(this)"
+                                            style="position:absolute; left: 80px; top: 4428px; width: 60px; height: 70px;">
+
+                                        <img class="skittle" id=skittle9 src="images/painMapping_legend_09_default.png"
+                                            data-color="#D9B2E6" onclick="selectSkittle(this)"
+                                            style="position:absolute; left: 80px; top: 4517px; width: 60px; height: 70px;">
 
                                         <select id="dd_region_1" class="lbl-condensed-black"
+                                            onchange="updateRegionOther(1); selectSkittle(document.getElementById ('skittle1'))"
                                             style="position: absolute; left: 159px; top: 3806px; width: 240px; height: 50px; font-size: 32px;">
-                                            <option value="">Select...</option>
-                                            <option value="sunny">sunny</option>
-                                            <option value="partly cloudy">partly cloudy</option>
-                                            <option value="cloudy">cloudy</option>
-                                            <option value="overcast">overcast</option>
-                                            <option value="rainy">rainy</option>
-                                            <option value="drizzle">drizzle</option>
-                                            <option value="stormy">stormy</option>
+                                            <option value="">select...</option>
+                                            <option value="burning">burning</option>
+                                            <option value="tightening">tightening</option>
+                                            <option value="stinging">stinging</option>
+                                            <option value="stiffness">stiffness</option>
+                                            <option value="bone breaking">bone breaking</option>
+                                            <option value="crushing">crushing</option>
+                                            <option value="allodynia">allodynia</option>
+                                            <option value="other">other</option>
                                         </select>
                                     </div>
 
                                     <select id="dd_region_2" class="lbl-condensed-black"
+                                        onchange="updateRegionOther(2); selectSkittle(document.getElementById ('skittle2'))"
                                         style="position: absolute; left: 159px; top: 3896px; width: 240px; height: 50px; font-size: 32px;">
-                                        <option value="">Select...</option>
-                                        <option value="sunny">sunny</option>
-                                        <option value="partly cloudy">partly cloudy</option>
-                                        <option value="cloudy">cloudy</option>
-                                        <option value="overcast">overcast</option>
-                                        <option value="rainy">rainy</option>
-                                        <option value="drizzle">drizzle</option>
-                                        <option value="stormy">stormy</option>
+                                        <option value="">select...</option>
+                                        <option value="burning">burning</option>
+                                        <option value="tightening">tightening</option>
+                                        <option value="stinging">stinging</option>
+                                        <option value="stiffness">stiffness</option>
+                                        <option value="bone breaking">bone breaking</option>
+                                        <option value="crushing">crushing</option>
+                                        <option value="allodynia">allodynia</option>
+                                        <option value="other">other</option>
                                     </select>
                                 </div>
 
                                 <select id="dd_region_3" class="lbl-condensed-black"
+                                    onchange="updateRegionOther(3); selectSkittle(document.getElementById ('skittle3'))"
                                     style="position: absolute; left: 159px; top: 3985px; width: 240px; height: 50px; font-size: 32px;">
-                                    <option value="">Select...</option>
-                                    <option value="sunny">sunny</option>
-                                    <option value="partly cloudy">partly cloudy</option>
-                                    <option value="cloudy">cloudy</option>
-                                    <option value="overcast">overcast</option>
-                                    <option value="rainy">rainy</option>
-                                    <option value="drizzle">drizzle</option>
-                                    <option value="stormy">stormy</option>
+                                    <option value="">select...</option>
+                                    <option value="burning">burning</option>
+                                    <option value="tightening">tightening</option>
+                                    <option value="stinging">stinging</option>
+                                    <option value="stiffness">stiffness</option>
+                                    <option value="bone breaking">bone breaking</option>
+                                    <option value="crushing">crushing</option>
+                                    <option value="allodynia">allodynia</option>
+                                    <option value="other">other</option>
                                 </select>
                             </div>
 
                             <select id="dd_region_4" class="lbl-condensed-black"
+                                onchange="updateRegionOther(4); selectSkittle(document.getElementById ('skittle4'))"
                                 style="position: absolute; left: 159px; top: 4076px; width: 240px; height: 50px; font-size: 32px;">
-                                <option value="">Select...</option>
-                                <option value="sunny">sunny</option>
-                                <option value="partly cloudy">partly cloudy</option>
-                                <option value="cloudy">cloudy</option>
-                                <option value="overcast">overcast</option>
-                                <option value="rainy">rainy</option>
-                                <option value="drizzle">drizzle</option>
-                                <option value="stormy">stormy</option>
+                                <option value="">select...</option>
+                                <option value="burning">burning</option>
+                                <option value="tightening">tightening</option>
+                                <option value="stinging">stinging</option>
+                                <option value="stiffness">stiffness</option>
+                                <option value="bone breaking">bone breaking</option>
+                                <option value="crushing">crushing</option>
+                                <option value="allodynia">allodynia</option>
+                                <option value="other">other</option>
                             </select>
                         </div>
 
                         <select id="dd_region_5" class="lbl-condensed-black"
+                            onchange="updateRegionOther(5); selectSkittle(document.getElementById ('skittle5'))"
                             style="position: absolute; left: 159px; top: 4166px; width: 240px; height: 50px; font-size: 32px;">
-                            <option value="">Select...</option>
-                            <option value="sunny">sunny</option>
-                            <option value="partly cloudy">partly cloudy</option>
-                            <option value="cloudy">cloudy</option>
-                            <option value="overcast">overcast</option>
-                            <option value="rainy">rainy</option>
-                            <option value="drizzle">drizzle</option>
-                            <option value="stormy">stormy</option>
+                            <option value="">select...</option>
+                            <option value="burning">burning</option>
+                            <option value="tightening">tightening</option>
+                            <option value="stinging">stinging</option>
+                            <option value="stiffness">stiffness</option>
+                            <option value="bone breaking">bone breaking</option>
+                            <option value="crushing">crushing</option>
+                            <option value="allodynia">allodynia</option>
+                            <option value="other">other</option>
                         </select>
                     </div>
 
                     <select id="dd_region_6" class="lbl-condensed-black"
+                        onchange="updateRegionOther(6); selectSkittle(document.getElementById ('skittle6'))"
                         style="position: absolute; left: 159px; top: 4255px; width: 240px; height: 50px; font-size: 32px;">
-                        <option value="">Select...</option>
-                        <option value="sunny">sunny</option>
-                        <option value="partly cloudy">partly cloudy</option>
-                        <option value="cloudy">cloudy</option>
-                        <option value="overcast">overcast</option>
-                        <option value="rainy">rainy</option>
-                        <option value="drizzle">drizzle</option>
-                        <option value="stormy">stormy</option>
+                        <option value="">select...</option>
+                        <option value="burning">burning</option>
+                        <option value="tightening">tightening</option>
+                        <option value="stinging">stinging</option>
+                        <option value="stiffness">stiffness</option>
+                        <option value="bone breaking">bone breaking</option>
+                        <option value="crushing">crushing</option>
+                        <option value="allodynia">allodynia</option>
+                        <option value="other">other</option>
                     </select>
                 </div>
 
                 <select id="dd_region_7" class="lbl-condensed-black"
-                    style="position: absolute; left: 159px; top: 4345px; width: 240px; height: 50px; font-size: 32px;">
-                    <option value="">Select...</option>
-                    <option value="sunny">sunny</option>
-                    <option value="partly cloudy">partly cloudy</option>
-                    <option value="cloudy">cloudy</option>
-                    <option value="overcast">overcast</option>
-                    <option value="rainy">rainy</option>
-                    <option value="drizzle">drizzle</option>
-                    <option value="stormy">stormy</option>
+                    onchange="updateRegionOther(7); selectSkittle(document.getElementById ('skittle7'))""
+                    style=" position: absolute; left: 159px; top: 4345px; width: 240px; height: 50px; font-size:
+                    32px;">
+                    <option value="">select...</option>
+                    <option value="burning">burning</option>
+                    <option value="tightening">tightening</option>
+                    <option value="stinging">stinging</option>
+                    <option value="stiffness">stiffness</option>
+                    <option value="bone breaking">bone breaking</option>
+                    <option value="crushing">crushing</option>
+                    <option value="allodynia">allodynia</option>
+                    <option value="other">other</option>
                 </select>
             </div>
             <select id="dd_region_8" class="lbl-condensed-black"
+                onchange="updateRegionOther(8); selectSkittle(document.getElementById ('skittle8'))"
                 style="position: absolute; left: 159px; top: 4436px; width: 240px; height: 50px; font-size: 32px;">
-                <option value="">Select...</option>
-                <option value="sunny">sunny</option>
-                <option value="partly cloudy">partly cloudy</option>
-                <option value="cloudy">cloudy</option>
-                <option value="overcast">overcast</option>
-                <option value="rainy">rainy</option>
-                <option value="drizzle">drizzle</option>
-                <option value="stormy">stormy</option>
+                <option value="">select...</option>
+                <option value="burning">burning</option>
+                <option value="tightening">tightening</option>
+                <option value="stinging">stinging</option>
+                <option value="stiffness">stiffness</option>
+                <option value="bone breaking">bone breaking</option>
+                <option value="crushing">crushing</option>
+                <option value="allodynia">allodynia</option>
+                <option value="other">other</option>
             </select>
         </div>
-        <select id="dd_region_1" class="lbl-condensed-black"
+        <select id="dd_region_9" class="lbl-condensed-black"
+            onchange="updateRegionOther(9); selectSkittle(document.getElementById ('skittle9'))"
             style="position: absolute; left: 159px; top: 4525px; width: 240px; height: 50px; font-size: 32px;">
-            <option value="">Select...</option>
-            <option value="sunny">sunny</option>
-            <option value="partly cloudy">partly cloudy</option>
-            <option value="cloudy">cloudy</option>
-            <option value="overcast">overcast</option>
-            <option value="rainy">rainy</option>
-            <option value="drizzle">drizzle</option>
-            <option value="stormy">stormy</option>
+            <option value="">select...</option>
+            <option value="burning">burning</option>
+            <option value="tightening">tightening</option>
+            <option value="stinging">stinging</option>
+            <option value="stiffness">stiffness</option>
+            <option value="bone breaking">bone breaking</option>
+            <option value="crushing">crushing</option>
+            <option value="allodynia">allodynia</option>
+            <option value="other">other</option>
         </select>
     </div>
+
+    <input type="text" class="lbl-regular" id="dd_region_1_other" maxlength="100" placeholder="other" style="position: absolute; left: 159px; top: 3806px; width: 240px; height: 50px; text-align: center; 
+    border: 2px solid #333; border-radius: 4px; font-size: 35px; display: none;">
+
+    <input type="text" class="lbl-regular" id="dd_region_2_other" maxlength="100" placeholder="other" style="position: absolute; left: 159px; top: 3806px; width: 240px; height: 50px; text-align: center; 
+    border: 2px solid #333; border-radius: 4px; font-size: 35px; display: none;">
+
+    <input type="text" class="lbl-regular" id="dd_region_3_other" maxlength="100" placeholder="other" style="position: absolute; left: 159px; top: 3985px; width: 240px; height: 50px; text-align: center; 
+    border: 2px solid #333; border-radius: 4px; font-size: 35px; display: none;">
+
+    <input type="text" class="lbl-regular" id="dd_region_4_other" maxlength="100" placeholder="other" style="position: absolute; left: 159px; top: 4076px; width: 240px; height: 50px; text-align: center; 
+    border: 2px solid #333; border-radius: 4px; font-size: 35px; display: none;">
+
+    <input type="text" class="lbl-regular" id="dd_region_5_other" maxlength="100" placeholder="other" style="position: absolute; left: 159px; top: 4166px; width: 240px; height: 50px; text-align: center; 
+    border: 2px solid #333; border-radius: 4px; font-size: 35px; display: none;">
+
+    <input type="text" class="lbl-regular" id="dd_region_6_other" maxlength="100" placeholder="other" style="position: absolute; left: 159px; top: 4255px; width: 240px; height: 50px; text-align: center; 
+    border: 2px solid #333; border-radius: 4px; font-size: 35px; display: none;">
+
+    <input type="text" class="lbl-regular" id="dd_region_7_other" maxlength="100" placeholder="other" style="position: absolute; left: 159px; top: 4345px; width: 240px; height: 50px; text-align: center; 
+    border: 2px solid #333; border-radius: 4px; font-size: 35px; display: none;">
+
+    <input type="text" class="lbl-regular" id="dd_region_8_other" maxlength="100" placeholder="other" style="position: absolute; left: 159px; top: 4436px; width: 240px; height: 50px; text-align: center; 
+    border: 2px solid #333; border-radius: 4px; font-size: 35px; display: none;">
+
+    <input type="text" class="lbl-regular" id="dd_region_9_other" maxlength="100" placeholder="other" style="position: absolute; left: 159px; top: 4525px; width: 240px; height: 50px; text-align: center; 
+    border: 2px solid #333; border-radius: 4px; font-size: 35px; display: none;">
+
+
+
+
+
+
+
+
 
     <div id="section_skinTemp">
         <!-- skin temp stuff will go here -->
@@ -2208,6 +2308,7 @@
                                 style="background-image: url('images/chk_nevro_adjusted_no_default.png'); left: 1130px; top: 6760px;">
                             </button>
 
+                            <!-- submit button -->
                             <button id="submitEntryBtn" class="checkbox"
                                 data-default="images/submitEntryBtn_default.png"
                                 data-pressed="images/submitEntryBtn_pressed.png" onclick="toggleCheckbox(this)"
@@ -2218,6 +2319,8 @@
                             <button type="button" id="submitEntryBtn">Submit entry</button>
 
                             <script>
+
+
                                 function toggleCheckbox(element) {
                                     let parent = element.parentElement;
                                     let other = parent.querySelector('button.checked');
@@ -2390,6 +2493,40 @@
                                 updateSkinTempOther();
                                 updateSensitivityOther();
 
+                                //"other" box pain map dropdowns
+
+                                function updateRegionOther(regionNum) {
+                                    const dd = document.getElementById('dd_region_' + regionNum);
+                                    const ddOtherText = document.getElementById('dd_region_' + regionNum + '_other');
+                                    if (dd.value === 'other') {
+                                        ddOtherText.style.display = 'inline-block';
+                                    } else {
+                                        ddOtherText.value = '';
+                                        ddOtherText.style.display = 'none';
+                                    }
+                                }
+
+                                let activeSkittle = null;
+
+                                function selectSkittle(clickedSkittle) {
+                                    const allSkittles = document.querySelectorAll('.skittle');
+
+                                    allSkittles.forEach(skittle => {
+                                        skittle.classList.remove('scaled');
+                                    });
+
+                                    clickedSkittle.classList.add('scaled');
+                                    activeSkittle = clickedSkittle;
+
+                                }
+                                window.activeSkittle = activeSkittle;
+
+                                function fillZone(circle) {
+                                    if (!activeSkittle) return;
+                                    circle.setAttribute('fill', activeSkittle.dataset.color);
+                                }
+                                window.fillZone = fillZone;
+
                             </script>
 
 
@@ -2510,6 +2647,8 @@
                                         const lastweightBearingChecked = weightBearingCheckedButtons[weightBearingCheckedButtons.length - 1];
                                         weightBearingValue = lastweightBearingChecked.getAttribute('data-value');
                                     }
+
+
 
                                     // order: weatherType, tempHigh, tempLow, humidity, barometricPressure
 
